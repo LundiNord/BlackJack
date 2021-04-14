@@ -29,6 +29,6 @@ public class Spieler {
         //Wert ausrechnen
 
 
-        return x;
+        return 7;
     }
 }
