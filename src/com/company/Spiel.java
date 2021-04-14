@@ -2,7 +2,11 @@ package com.company;
 
 public class Spiel {
     public int anzahlSpieler;
-    private Spieler spieler1;           //Spieler deklarieren       ! spieler0 = Dealer
+    private Spieler spieler1;   //Spieler deklarieren       ! spieler0 = Dealer
+    private Spieler spieler2;   //max 5 Spieler         besserer Weg dafür??
+    private Spieler spieler3;
+    private Spieler spieler4;
+    private Spieler spieler5;
     private Interface interface1;       //Interface für das Spiel deklarieren
 
     public Spiel(int anzahlSpieler) {

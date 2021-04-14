@@ -1,12 +1,11 @@
 package com.company;
 
-public class Dealer extends Spieler{
-    public Dealer(double einsatz) {
-        super(einsatz);
+public class Dealer extends Teilnehmer {
 
+    public Dealer ()
+    {
 
     }
-
 
 
 }
