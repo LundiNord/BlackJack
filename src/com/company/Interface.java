@@ -14,6 +14,6 @@ public class Interface {
         return x;
     }
     public void ShowEinsatz(double einsatz, int spieler) {
-        System.out.println("Spieler: "+spieler+"Dein Einsatz: "+einsatz);
+        System.out.println("Spieler: "+spieler+" | Dein Einsatz: "+einsatz);
     }
 }

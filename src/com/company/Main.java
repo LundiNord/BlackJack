@@ -1,9 +1,10 @@
 package com.company;
 
 public class Main {
+    private Spiel spiel1;
+    public void main() {
 
-    public static void main(String[] args) {
-	// write your code here
         System.out.println("Hello");
+        spiel1 = new Spiel(1);
     }
 }

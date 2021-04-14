@@ -9,6 +9,7 @@ public class Spiel {
         this.anzahlSpieler = anzahlSpieler;
         interface1 = new Interface();           //Interface erzeugen
         Spielstart();
+        debug();
 
     }
 
@@ -18,6 +19,10 @@ public class Spiel {
            spieler1 = new Spieler(interface1.Einsatz(i));
            //
         }
+
+    }
+    public void debug() {
+        interface1.ShowEinsatz(spieler1.getEinsatz(), 1);
 
     }
 
