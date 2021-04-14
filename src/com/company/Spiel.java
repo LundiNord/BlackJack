@@ -37,7 +37,7 @@ public class Spiel {
         if(x<=16) {             //hässlich      geht das besser??
             wert = 10;
         }
-        else if(16<x&&x<=20) {
+        else if(16<x&&x<=20) {      //Bild +
 
         }
 
