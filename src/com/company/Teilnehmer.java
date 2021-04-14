@@ -18,7 +18,7 @@ public class Teilnehmer {               //Unterklassen: Spieler, Dealer
     public int handWert() {         //Berechnet den gesamtwert der Karten
         int x;
         int g = HandBlatt.size();
-        //Wert ausrechnen
+        //
 
 
         return 7;
