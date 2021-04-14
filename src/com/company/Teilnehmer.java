@@ -19,7 +19,7 @@ public abstract class Teilnehmer {               //Unterklassen: Spieler, Dealer
         int x;
         int g = HandBlatt.size();
         //
-
+        //auf das Ass aufpassen
 
         return 7;
     }

@@ -31,17 +31,17 @@ public class Spiel {
 
     }
 
-    public Karte KartenErzeugen() {
+    public Karte KarteErzeugen() {
         int x =  new java.util.Random().nextInt(53);    //hoffe das 53 richtig ist
         int wert;
-        if(x<=16) {             //hässlich      geht das besser??
+        if(x<=12) {             //hässlich      geht das besser??
             wert = 10;
         }
-        else if(16<x&&x<=20) {      //Bild +
-
+        else if(12<x&&x<=16) {      //Bild +
+            wert = 2;
         }
 
-        Karte karte1 = new Karte(4);        //Karte mit x als Wert erzeugen
+        Karte karte1 = new Karte(4, true);        //Karte mit x als Wert erzeugen
         return karte1;
     }
 
