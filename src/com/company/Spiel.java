@@ -19,17 +19,20 @@ public class Spiel {
     public void Spielstart() {          //Initialisieren des Spiel
         for(int i=0;i<anzahlSpieler;i++) {      //Spieler erzeugen
             Player.add(new Spieler(interface1.Einsatz(i)));
-            //Karte erzeugen und dem Spieler geben
+            Spieler spieler1 = (Spieler) Player.get(i);
+            spieler1.updateHandBlatt(KarteErzeugen());
+            spieler1.updateHandBlatt(KarteErzeugen());  //2 neue Karten
+            Player.set(i,spieler1);
         }
 
     }
-    public void debug() {
+    public void debug() {                               //pls ignorieren
         interface1.ShowEinsatz([Player.get(1)].i), 1);
-        int i;
-        i = [Player(1)].i;
+        Spieler spieler1 = (Spieler) Player.get(1);
+
     }
 
-   public Karte KartenErzeugen() {
+   public Karte KarteErzeugen() {
        int[] Karten= new int [11];      //Array mit den Kartenwerten
        Karten[0]=1;
        Karten[1]=2;
