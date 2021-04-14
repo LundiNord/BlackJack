@@ -1,7 +1,7 @@
 package com.company;
 import java.util.ArrayList;
 
-public class Teilnehmer {               //Unterklassen: Spieler, Dealer
+public abstract class Teilnehmer {               //Unterklassen: Spieler, Dealer
     private ArrayList HandBlatt = new ArrayList();      //Array Liste mit den Karten auf der Hand
     public Teilnehmer() {
 
