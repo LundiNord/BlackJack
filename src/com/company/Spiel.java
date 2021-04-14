@@ -26,6 +26,13 @@ public class Spiel {
         }
 
     }
+    public void addKarten(Karte karte1, int spieler) {      //Karten in ein Karten Array eines Spielers einfügen
+        Spieler spieler1 = (Spieler) Player.get(spieler);
+        spieler1.updateHandBlatt(karte1);
+        Player.set(spieler,spieler1);
+    }
+
+
     public void debug() {                               //pls ignorieren
         interface1.ShowEinsatz([Player.get(1)].i), 1);
         Spieler spieler1 = (Spieler) Player.get(1);
