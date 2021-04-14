@@ -1,2 +1,2 @@
 # BlackJack
-Schul Projekt
+Schule Projekt

@@ -1,1 +1,12 @@
-Wahrscheinlichkeiten
+Wahrscheinlichkeiten:
+
+Deck mit 52 Karten
+Wert    Anzahl  Wahrscheinlichkeit
+2       4       4/52
+3       4       4/52
+...     ...     ...
+9       4       4/52
+
+10      4x4     16/52
+
+1/11    4       4/52
