@@ -3,17 +3,17 @@ package com.company;
 public class KartenStapel {          //Der Kartenstapel, bestehend aus 6 Decks mit je 52 Karten
     private int Blätter;             //Anzahl der Blätter mit denen gespielt wird
     private int a;                   //Variable zum Sichern der generierten Karte
-    private int W1 = 4*Blätter;             //Wahrscheinlichkeiten
-    private int W2 = 8*Blätter;
-    private int W3 = 12*Blätter;
-    private int W4 = 16*Blätter;
-    private int W5 = 20*Blätter;
-    private int W6 = 24*Blätter;
-    private int W7 = 28*Blätter;
-    private int W8 = 32*Blätter;
-    private int W9 = 44*Blätter;
-    private int W10 = 48*Blätter;
-    private int W11 = 52*Blätter;
+    private int W1;             //Wahrscheinlichkeiten
+    private int W2;
+    private int W3;
+    private int W4;
+    private int W5;
+    private int W6;
+    private int W7;
+    private int W8;
+    private int W9;
+    private int W10;
+    private int W11;
 
     //ToDo: Array oder ähnliches um Kartenstapel zu Speichern
 
