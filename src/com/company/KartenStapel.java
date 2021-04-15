@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class KartenStapel {          //Der Kartenstapel, bestehend aus 6 Decks mit je 52 Karten
     private int Blätter;             //Anzahl der Blätter mit denen gespielt wird
-    private int a;                   //Variable zum Sichern der genererierten Karte
+    private int a;                   //Variable zum Sichern der generierten Karte
     private int W1 = 4*Blätter;             //Wahrscheinlichkeiten
     private int W2 = 8*Blätter;
     private int W3 = 12*Blätter;
@@ -91,6 +91,7 @@ public class KartenStapel {          //Der Kartenstapel, bestehend aus 6 Decks m
             a = Karten[11];            //muss noch auf Bube() verweisen
             W11 = W11 * Blätter - 1;
         }
+        //FixMe: Eine KartenObjekt erzeugen und zurückgeben
         return a;
     }
     public Karte KarteZiehen() {
