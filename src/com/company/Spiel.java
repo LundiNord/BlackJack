@@ -15,7 +15,7 @@ public class Spiel {
         kartenstapel1 = new KartenStapel(6);
 
         //Nur zum Testen
-        Spielstart();
+        //Spielstart();
         debug();
 
     }
