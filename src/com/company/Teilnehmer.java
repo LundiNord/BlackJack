@@ -32,10 +32,14 @@ public abstract class Teilnehmer {               //Unterklassen: Spieler, Dealer
         //ToDo: Ass+Bube erkennen
         for(int i=0;i<HandBlatt.size();i++) {
             Karte karte1 = (Karte) HandBlatt.get(i);
-            Ass = karte1.getAss();
-            Bube = karte1.istBube();
+            if(Ass==false) {                        //Überschreibungen des Ergebnisses verhindern
+                Ass = karte1.istAss();
+            }
+            if(Bube==false) {
+                Bube = karte1.istBube();
+            }
         }
-        if(Ass==true&&Bube==true) {
+        if(Ass==true&&Bube==true) {     //Nur wenn beide true sind
             vorhanden = true;
         }
         return vorhanden;

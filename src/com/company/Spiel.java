@@ -38,11 +38,25 @@ public class Spiel {
         Spieler spieler1 = (Spieler) Player.get(spieler);
         return spieler1.getEinsatz();
     }
+    public int getHandWert(int spieler) {
+        Spieler spieler1 = (Spieler) Player.get(spieler);
+        return spieler1.handWert();
+    }
+    public boolean CheckBlackJack(int spieler) {
+        Spieler spieler1 = (Spieler) Player.get(spieler);
+        return spieler1.BlackJackDetektor();
+    }
     //ToDo: weitere Variablen aus der Array List Player bekommen
 
 
     public void debug() {                               //pls ignorieren
         interface1.ShowEinsatz(getEinsatz(0),0);
+        Karte karte1 = new Karte(10,true);
+        Karte karte2 = new Karte(1,false);
+        addKarten(karte1,0);
+        addKarten(karte2,0);
+        System.out.println("Hand Wert: "+getHandWert(0));
+        System.out.println("BlackJack: "+CheckBlackJack(0));
 
 
     }
