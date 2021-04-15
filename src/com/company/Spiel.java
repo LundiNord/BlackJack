@@ -26,11 +26,10 @@ public class Spiel {
     public void Spielstart() {          //Initialisieren des Spiel
         for(int i=0;i<anzahlSpieler;i++) {      //Spieler erzeugen
             Player.add(new Spieler(interface1.Einsatz(i)));
-            Spieler spieler1 = (Spieler) Player.get(i);
-            //ToDo: dem Spieler 2 Karten geben
-            //spieler1.updateHandBlatt(KarteErzeugen());
-            //spieler1.updateHandBlatt(KarteErzeugen());  //2 neue Karten
-            Player.set(i,spieler1);
+
+            addKarten(kartenstapel1.KarteErzeugen(),i);
+            addKarten(kartenstapel1.KarteErzeugen(),i);
+
         }
 
     }
@@ -58,10 +57,7 @@ public class Spiel {
 
     public void debug() {                               //pls ignorieren
         interface1.ShowEinsatz(getEinsatz(0),0);
-        Karte karte1 = new Karte(10,true);
-        Karte karte2 = new Karte(1,false);
-        addKarten(karte1,0);
-        addKarten(karte2,0);
+
         System.out.println("Hand Wert: "+getHandWert(0));
         System.out.println("BlackJack: "+CheckBlackJack(0));
 

@@ -1,7 +1,5 @@
 package com.company;
 
-import java.util.Scanner;
-
 public class KartenStapel {          //Der Kartenstapel, bestehend aus 6 Decks mit je 52 Karten
     private int Blätter;             //Anzahl der Blätter mit denen gespielt wird
     private int a;                   //Variable zum Sichern der generierten Karte
