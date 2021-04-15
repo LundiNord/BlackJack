@@ -6,13 +6,13 @@ public class Spiel {
     private Dealer dealer1;                             //Dealer deklarieren
     private ArrayList Player = new ArrayList();        //Array List an Spielern |  Startet mit 0
     private Interface interface1;                      //Interface für das Spiel deklarieren
-    private KartenStapel kartenstapel1;
+    private KartenStapel2 kartenstapel1;
     private int Blätter;
 
     public Spiel(int anzahlSpieler) {
         this.anzahlSpieler = anzahlSpieler;
         interface1 = new Interface();           //Interface erzeugen
-        kartenstapel1 = new KartenStapel(6);
+        kartenstapel1 = new KartenStapel2(6);
 
         //Nur zum Testen
         Spielstart();
