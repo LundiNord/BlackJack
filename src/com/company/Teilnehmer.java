@@ -49,13 +49,13 @@ public abstract class Teilnehmer {               //Unterklassen: Spieler, Dealer
             abstand2 = 21 - x2;
         }
         if(anzahlAsse>=2) {             //Wenn mehr als 2 Asse
-            x1 = (11 + (1*(anzahlAsse-1)));
+            x1 = x1 + (11 + (1*(anzahlAsse-1)));
             abstand1 = 21 -x1;
 
-            x2 = (1*(anzahlAsse-1));
+            x2 = x2 + (1*anzahlAsse);
             abstand2= 21 -x2;
         }
-        if(abstand1>21) {       //besseren Wert nehmen
+        if(abstand1<0) {       //besseren Wert nehmen
             wert = x2;
         }
         else {
