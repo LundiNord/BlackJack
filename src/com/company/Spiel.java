@@ -12,7 +12,7 @@ public class Spiel {
     public Spiel(int anzahlSpieler) {
         this.anzahlSpieler = anzahlSpieler;
         interface1 = new Interface();           //Interface erzeugen
-        kartenstapel1 = new KartenStapel2(6);
+        kartenstapel1 = new KartenStapel2(1);
 
         //Nur zum Testen
         Spielstart();

@@ -3,7 +3,7 @@ package com.company;
 public class KartenStapel2 {
 
     private int blätter;             //Anzahl der Blätter mit denen gespielt wird
-    int[]karten = new int[12];
+    int[]karten = new int[13];
 
 
     public KartenStapel2(int blätter) {
