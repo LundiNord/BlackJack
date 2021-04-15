@@ -40,6 +40,7 @@ public class KartenStapel {          //Der Kartenstapel, bestehend aus 6 Decks m
         Karten[11] = 12;                  //Bube als 12, muss erkannt werden
         int x = new java.util.Random().nextInt(52);
 
+        boolean istBube=false;
 
         if (x <= W1) {
             a = Karten[1];
@@ -84,9 +85,12 @@ public class KartenStapel {          //Der Kartenstapel, bestehend aus 6 Decks m
         if (x <= W11 && x > 48) {
             a = Karten[11];            //muss noch auf Bube() verweisen
             W11 = W11 * Blätter - 1;
+            istBube=true;
         }
+
         //FixMe: Eine KartenObjekt erzeugen und zurückgeben
-        return a;
+        Karte karte1 = new Karte(a,istBube);
+        return karte1;
     }
     public Karte KarteZiehen() {
         //ToDo: Random Karte auswählen und zurückgeben.
