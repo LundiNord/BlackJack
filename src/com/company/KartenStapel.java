@@ -56,43 +56,43 @@ public class KartenStapel {          //Der Kartenstapel, bestehend aus 6 Decks m
             a = Karten[1];
             W1 = W1 * Blätter - 1;
         }
-        if (x <= W2 && x > 4) {
+        if (x <= W2 && x > 4*Blätter) {
             a = Karten[2];
             W2 = W2 * Blätter - 1;
         }
-        if (x <= W3 && x > 8) {
+        if (x <= W3 && x > 8*Blätter) {
             a = Karten[3];
             W3 = W3 * Blätter - 1;
         }
-        if (x <= W4 && x > 12) {
+        if (x <= W4 && x > 12*Blätter) {
             a = Karten[4];
             W4 = W4 * Blätter - 1;
         }
-        if (x <= W5 && x > 16) {
+        if (x <= W5 && x > 16*Blätter) {
             a = Karten[5];
             W5 = W5 * Blätter - 1;
         }
-        if (x <= W6 && x > 20) {
+        if (x <= W6 && x > 20*Blätter) {
             a = Karten[6];
             W6 = W6 * Blätter - 1;
         }
-        if (x <= W7 && x > 20) {
+        if (x <= W7 && x > 20*Blätter) {
             a = Karten[7];
             W7 = W7 * Blätter - 1;
         }
-        if (x <= W8 && x > 28) {
+        if (x <= W8 && x > 28*Blätter) {
             a = Karten[8];
             W8 = W8 * Blätter - 1;
         }
-        if (x <= W9 && x > 32) {
+        if (x <= W9 && x > 32*Blätter) {
             a = Karten[9];
             W9 = W9 * Blätter - 1;
         }
-        if (x <= W10 && x > 44) {
+        if (x <= W10 && x > 44*Blätter) {
             a = Karten[11];             //muss noch auf fallsAss() verweisen
             W9 = W9 * Blätter - 1;
         }
-        if (x <= W11 && x > 48) {
+        if (x <= W11 && x > 48*Blätter) {
             a = Karten[11];            //muss noch auf Bube() verweisen
             W11 = W11 * Blätter - 1;
             istBube=true;
