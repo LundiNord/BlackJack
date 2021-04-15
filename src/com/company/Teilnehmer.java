@@ -33,9 +33,9 @@ public abstract class Teilnehmer {               //Unterklassen: Spieler, Dealer
         return x;
     }
     public int AssHändler(int wert, int anzahlAsse) {       //Alle kombinationen durchrechnen und beste Auswählen
-        int abstand1;
-        int abstand2;
-        wert = (int) (wert-anzahlAsse);
+        int abstand1 = 0;
+        int abstand2= 0;
+        wert = (wert-anzahlAsse);
         int x1 = wert;
         int x2 = wert;
 
@@ -54,14 +54,12 @@ public abstract class Teilnehmer {               //Unterklassen: Spieler, Dealer
             x2 = (1*(anzahlAsse-1));
             abstand2= 21 -x2;
         }
-
-        if(abstand1>21) {
+        if(abstand1>21) {       //besseren Wert nehmen
             wert = x2;
         }
         else {
                 wert = x1;
         }
-
         return wert;
     }
     public boolean BlackJackDetektor() {        //true: BlackJack vorhanden
