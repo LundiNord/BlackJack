@@ -10,6 +10,8 @@ public class Spiel {
     public Spiel(int anzahlSpieler) {
         this.anzahlSpieler = anzahlSpieler;
         interface1 = new Interface();           //Interface erzeugen
+
+        //Nur zum Testen
         Spielstart();
         debug();
 
@@ -17,7 +19,7 @@ public class Spiel {
 
 
     public void Spielstart() {          //Initialisieren des Spiel
-        for(int i=0;i<=anzahlSpieler;i++) {      //Spieler erzeugen
+        for(int i=0;i<anzahlSpieler;i++) {      //Spieler erzeugen
             Player.add(new Spieler(interface1.Einsatz(i)));
             Spieler spieler1 = (Spieler) Player.get(i);
             //ToDo: dem Spieler 2 Karten geben
@@ -32,10 +34,15 @@ public class Spiel {
         spieler1.updateHandBlatt(karte1);
         Player.set(spieler,spieler1);
     }
+    public double getEinsatz(int spieler) {                 //Einsatz eines Spielers bekommen
+        Spieler spieler1 = (Spieler) Player.get(spieler);
+        return spieler1.getEinsatz();
+    }
+    //ToDo: weitere Variablen aus der Array List Player bekommen
 
 
     public void debug() {                               //pls ignorieren
-        interface1.ShowEinsatz(,0);
+        interface1.ShowEinsatz(getEinsatz(0),0);
 
 
     }

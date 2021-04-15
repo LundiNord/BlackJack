@@ -9,7 +9,7 @@ public class Interface {
     public double Einsatz(int spieler) {        //Der wievielte Spieler wird erzeugt ! 0=1
         Scanner scanner = new Scanner(System.in);
         System.out.println("Spieler: "+spieler+" | Wie hoch soll dein Einsatz sein?");
-        int x = scanner.nextInt();
+        double x = scanner.nextDouble();
         //Typprüfung notwendig??
         return x;
     }

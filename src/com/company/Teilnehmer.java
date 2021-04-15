@@ -15,13 +15,30 @@ public abstract class Teilnehmer {               //Unterklassen: Spieler, Dealer
     }
 
 
-    public int handWert() {         //Berechnet den gesamtwert der Karten
-        int x;
+    public int handWert() {         //Berechnet den gesamtwert der Karten auf der Hand
+        int x = 0;
         int g = HandBlatt.size();
-        //
-        //auf das Ass aufpassen
-
-        return 7;
+        for(int i=0;i<g;i++) {
+            Karte karte1 = (Karte) HandBlatt.get(i);
+            x = x + karte1.getWert();
+        }
+        //ToDo: Was mit den Assen
+        return x;
+    }
+    public boolean BlackJackDetektor() {        //true: BlackJack vorhanden
+        boolean vorhanden = false;
+        boolean Ass = false;
+        boolean Bube = false;
+        //ToDo: Ass+Bube erkennen
+        for(int i=0;i<HandBlatt.size();i++) {
+            Karte karte1 = (Karte) HandBlatt.get(i);
+            Ass = karte1.getAss();
+            Bube = karte1.istBube();
+        }
+        if(Ass==true&&Bube==true) {
+            vorhanden = true;
+        }
+        return vorhanden;
     }
 
 }

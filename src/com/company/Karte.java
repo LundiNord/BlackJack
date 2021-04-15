@@ -5,7 +5,7 @@ public class Karte
     private int wert;   //Ass=1, Zahlen = 1-10, Bild=10
 
     private boolean istAss = false;
-    private boolean istBube= false;
+    private boolean istBube;
     public Karte(int wert, boolean istBube) //Karten mit Werten implementieren
     {
         this.istBube = istBube;
@@ -19,5 +19,11 @@ public class Karte
     }
     public int getWert() {      //getter
         return wert;
+    }
+    public boolean getAss() {
+        return istAss;
+    }
+    public boolean istBube() {
+        return istBube;
     }
 }
