@@ -40,7 +40,6 @@ public abstract class Teilnehmer {               //Unterklassen: Spieler, Dealer
         int x1 = wert;
         int x2 = wert;
 
-
         if(anzahlAsse==1) {     //Wenn nur ein Ass
             x1 = x1 + 1;
             abstand1 = 21 -x1;
