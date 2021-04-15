@@ -27,7 +27,6 @@ public class KartenStapel {          //Der Kartenstapel, bestehend aus 6 Decks m
 
     public Karte KarteErzeugen() {
         int[] Karten = new int[11];      //Array mit den Kartenwerten
-        Karten[0] = 1;
         Karten[1] = 2;
         Karten[2] = 3;
         Karten[3] = 4;
@@ -37,7 +36,7 @@ public class KartenStapel {          //Der Kartenstapel, bestehend aus 6 Decks m
         Karten[7] = 8;
         Karten[8] = 9;
         Karten[9] = 10;
-        Karten[10] = 11;
+        Karten[10] = 1;                    //Ass
         Karten[11] = 12;                  //Bube als 12, muss erkannt werden
         int x = new java.util.Random().nextInt(52);
 
