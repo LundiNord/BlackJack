@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Spiel {
     private int anzahlSpieler;
     private Dealer dealer1;                             //Dealer deklarieren
-    private ArrayList Player = new ArrayList();        //Array List an Spielern
+    private ArrayList Player = new ArrayList();        //Array List an Spielern |  Startet mit 0
     private Interface interface1;       //Interface für das Spiel deklarieren
 
     public Spiel(int anzahlSpieler) {
@@ -17,11 +17,12 @@ public class Spiel {
 
 
     public void Spielstart() {          //Initialisieren des Spiel
-        for(int i=0;i<anzahlSpieler;i++) {      //Spieler erzeugen
+        for(int i=0;i<=anzahlSpieler;i++) {      //Spieler erzeugen
             Player.add(new Spieler(interface1.Einsatz(i)));
             Spieler spieler1 = (Spieler) Player.get(i);
-            spieler1.updateHandBlatt(KarteErzeugen());
-            spieler1.updateHandBlatt(KarteErzeugen());  //2 neue Karten
+            //ToDo: dem Spieler 2 Karten geben
+            //spieler1.updateHandBlatt(KarteErzeugen());
+            //spieler1.updateHandBlatt(KarteErzeugen());  //2 neue Karten
             Player.set(i,spieler1);
         }
 
@@ -34,8 +35,8 @@ public class Spiel {
 
 
     public void debug() {                               //pls ignorieren
-        interface1.ShowEinsatz([Player.get(1)].i), 1);
-        Spieler spieler1 = (Spieler) Player.get(1);
+        interface1.ShowEinsatz(,0);
+
 
     }
 
@@ -88,6 +89,7 @@ public class Spiel {
        if(x<=52&&x>48){
            a=Karten[11];            //muss noch auf Bube() verweisen
        }
+       return null;
     }
 
 }
