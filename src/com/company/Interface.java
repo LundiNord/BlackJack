@@ -12,6 +12,14 @@ public class Interface {
         double x = scanner.nextDouble();
         //Typprüfung notwendig??
         return x;
+
+    }
+    public int Blätter(int Blätter){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Wie viele Blätter möchtest du?"+Blätter);
+        int x = scanner.nextInt();
+        //Typprüfung notwendig??
+        return x;
     }
     public void ShowEinsatz(double einsatz, int spieler) {
         System.out.println("Spieler: "+spieler+" | Dein Einsatz ist: "+einsatz);

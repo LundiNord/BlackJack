@@ -2,13 +2,13 @@ Wahrscheinlichkeiten:
 
 Deck mit 52 Karten
 Wert    Anzahl  Wahrscheinlichkeit
-2       4       4/52
-3       4       4/52
+2       4*6       4/52*6
+3       4*6       4/52*6
 ...     ...     ...
-9       4       4/52
+9       4*6       4/52*6
 
-10      3x4     12/52   10+Dame+König
+10      3x4*6     12/52*6   10+Dame+König
 
-1/11    4       4/52    Ass
+1/11    4*6       4/52*6    Ass
 
-10      4       4/52    Bube
+10      4*6       4/52*6    Bube
