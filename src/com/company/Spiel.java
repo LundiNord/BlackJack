@@ -27,8 +27,10 @@ public class Spiel {
         for(int i=0;i<anzahlSpieler;i++) {      //Spieler erzeugen
             Player.add(new Spieler(interface1.Einsatz(i)));
 
-            addKarten(kartenstapel1.KarteErzeugen(),i);
-            addKarten(kartenstapel1.KarteErzeugen(),i);
+
+            for(int s=0;s<52;s++){
+                addKarten(kartenstapel1.KarteErzeugen(), i);
+            }
 
         }
 
@@ -57,19 +59,14 @@ public class Spiel {
 
     public void debug() {                               //pls ignorieren
         interface1.ShowEinsatz(getEinsatz(0),0);
-        //debug2();
+
         System.out.println("Hand Wert: "+getHandWert(0));
         System.out.println("BlackJack: "+CheckBlackJack(0));
 
 
     }
-    public void debug2() {                      //pls ignorieren
-        for(int i=0;i<anzahlSpieler;i++) {
-            Player.add(new Spieler(interface1.Einsatz(i)));
-            for(int s=0;s<52;s++)
-            addKarten(kartenstapel1.KarteErzeugen(), i);
-        }
-    }
+
+
 
 }
 

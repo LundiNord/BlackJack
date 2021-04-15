@@ -101,7 +101,7 @@ public class KartenStapel {          //Der Kartenstapel, bestehend aus 6 Decks m
             a = 10;
         }
 
-        //FixMe: Eine KartenObjekt erzeugen und zurückgeben
+
         Karte karte1 = new Karte(a,istBube);
         return karte1;
 
