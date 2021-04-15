@@ -17,16 +17,11 @@ public class KartenStapel {          //Der Kartenstapel, bestehend aus 6 Decks m
     private int W10 = 48*Blätter;
     private int W11 = 52*Blätter;
 
-
     //ToDo: Array oder ähnliches um Kartenstapel zu Speichern
-    public void setBlätter() {
-        this.Blätter = Blätter;
-    }
-
 
     public KartenStapel(int Blätter) {
+        this.Blätter = Blätter;
         //ToDo: am Anfang: Kartenstapel mischen uns speichern
-
 
     }
 
