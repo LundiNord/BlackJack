@@ -12,7 +12,7 @@ public class Spiel {
     public Spiel(int anzahlSpieler) {
         this.anzahlSpieler = anzahlSpieler;
         interface1 = new Interface();           //Interface erzeugen
-        kartenstapel1 = new KartenStapel();
+        kartenstapel1 = new KartenStapel(6);
 
         //Nur zum Testen
         Spielstart();
@@ -66,10 +66,9 @@ public class Spiel {
         System.out.println("BlackJack: "+CheckBlackJack(0));
 
 
-    }
 
-
-       return null;
     }
 
 }
+
+

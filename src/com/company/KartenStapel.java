@@ -48,54 +48,56 @@ public class KartenStapel {          //Der Kartenstapel, bestehend aus 6 Decks m
 
         if (x <= W1) {
             a = Karten[1];
-            W1 = W1*Blätter - 1;
+            W1 = W1 * Blätter - 1;
         }
         if (x <= W2 && x > 4) {
             a = Karten[2];
-            W2 = W2*Blätter - 1;
+            W2 = W2 * Blätter - 1;
         }
         if (x <= W3 && x > 8) {
             a = Karten[3];
-            W3 = W3*Blätter - 1;
+            W3 = W3 * Blätter - 1;
         }
         if (x <= W4 && x > 12) {
             a = Karten[4];
-            W4 = W4*Blätter - 1;
+            W4 = W4 * Blätter - 1;
         }
         if (x <= W5 && x > 16) {
             a = Karten[5];
-            W5 = W5*Blätter - 1;
+            W5 = W5 * Blätter - 1;
         }
         if (x <= W6 && x > 20) {
             a = Karten[6];
-            W6 = W6*Blätter - 1;
+            W6 = W6 * Blätter - 1;
         }
         if (x <= W7 && x > 20) {
             a = Karten[7];
-            W7 = W7*Blätter - 1;
+            W7 = W7 * Blätter - 1;
         }
         if (x <= W8 && x > 28) {
             a = Karten[8];
-            W8 = W8*Blätter - 1;
+            W8 = W8 * Blätter - 1;
         }
         if (x <= W9 && x > 32) {
             a = Karten[9];
-            W9 = W9*Blätter - 1;
+            W9 = W9 * Blätter - 1;
         }
         if (x <= W10 && x > 44) {
             a = Karten[11];             //muss noch auf fallsAss() verweisen
-            W9 = W9*Blätter - 1;
+            W9 = W9 * Blätter - 1;
         }
         if (x <= W11 && x > 48) {
             a = Karten[11];            //muss noch auf Bube() verweisen
-            W11 = W11*Blätter - 1;
+            W11 = W11 * Blätter - 1;
         }
-        public Karte KarteZiehen () {
-            //ToDo: Random Karte auswählen und zurückgeben.
-
-
-            return a;
-        }
-
+        return a;
     }
+    public Karte KarteZiehen() {
+        //ToDo: Random Karte auswählen und zurückgeben.
+
+
+            return null;
+        }
+
+
 }
