@@ -6,10 +6,12 @@ public class Spiel {
     private Dealer dealer1;                             //Dealer deklarieren
     private ArrayList Player = new ArrayList();        //Array List an Spielern |  Startet mit 0
     private Interface interface1;       //Interface für das Spiel deklarieren
+    private KartenStapel kartenstapel1;
 
     public Spiel(int anzahlSpieler) {
         this.anzahlSpieler = anzahlSpieler;
         interface1 = new Interface();           //Interface erzeugen
+        kartenstapel1 = new KartenStapel();
 
         //Nur zum Testen
         Spielstart();
@@ -47,6 +49,8 @@ public class Spiel {
         return spieler1.BlackJackDetektor();
     }
     //ToDo: weitere Variablen aus der Array List Player bekommen
+    //wahrscheinlich geht das besser, weiß aber nicht wie
+
 
 
     public void debug() {                               //pls ignorieren
