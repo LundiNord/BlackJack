@@ -1,6 +1,5 @@
 package com.company;
 import java.util.ArrayList;
-import java.lang.Math;
 
 public abstract class Teilnehmer {               //Unterklassen: Spieler, Dealer
     private ArrayList HandBlatt = new ArrayList();      //Array Liste mit den Karten auf der Hand
@@ -18,7 +17,7 @@ public abstract class Teilnehmer {               //Unterklassen: Spieler, Dealer
 
     public int handWert() {         //Berechnet den gesamtwert der Karten auf der Hand
         int x = 0;          //Wert
-        double a = 0;          //Anzahl Asse
+        int a = 0;          //Anzahl Asse
         int g = HandBlatt.size();
         for(int i=0;i<g;i++) {
             Karte karte1 = (Karte) HandBlatt.get(i);
@@ -33,30 +32,39 @@ public abstract class Teilnehmer {               //Unterklassen: Spieler, Dealer
         }
         return x;
     }
-    public int AssHändler(int wert, double anzahlAsse) {       //Alle kombinationen durchrechnen und beste Auswählen
+    public int AssHändler(int wert, int anzahlAsse) {       //Alle kombinationen durchrechnen und beste Auswählen
         int abstand1;
         int abstand2;
         wert = (int) (wert-anzahlAsse);
         int x1 = wert;
         int x2 = wert;
-        int d = (int) Math.pow(2,anzahlAsse);   //Anzahl durchläufe | wahrscheinlich alles nicht nötig da selten mehr als 3 Asse
-        //for (int i = 0; i < d; i++) {
 
 
+        if(anzahlAsse==1) {     //Wenn nur ein Ass
             x1 = x1 + 1;
-
             abstand1 = 21 -x1;
 
-            x1 = x1 + 11;
-            abstand2 = 21 - x1;
+            x2 = x2 + 11;
+            abstand2 = 21 - x2;
+        }
+        if(anzahlAsse>=2) {             //Wenn mehr als 2 Asse
+            x1 = (11 + (1*(anzahlAsse-1)));
+            abstand1 = 21 -x1;
 
-            if(abstand1<abstand2){          //Abstandswerte vergleichen
+            x2 = (1*(anzahlAsse-1));
+            abstand2= 21 -x2;
+        }
+
+
+
+
+        if(abstand1<abstand2){          //Abstandswerte vergleichen
                 wert = x1;
             }
-            else {
+        else {
                 wert = x2;
             }
-        //}
+
 
 
 
