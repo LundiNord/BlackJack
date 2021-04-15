@@ -32,6 +32,7 @@ public abstract class Teilnehmer {               //Unterklassen: Spieler, Dealer
         }
         return x;
     }
+
     public int AssHändler(int wert, int anzahlAsse) {       //Alle kombinationen durchrechnen und beste Auswählen
         int abstand1 = 0;
         int abstand2= 0;
