@@ -97,10 +97,14 @@ public class KartenStapel {          //Der Kartenstapel, bestehend aus 6 Decks m
             W11 = W11 * Blätter - 1;
             istBube=true;
         }
+        if(istBube=true) {
+            a = 10;
+        }
 
         //FixMe: Eine KartenObjekt erzeugen und zurückgeben
         Karte karte1 = new Karte(a,istBube);
         return karte1;
+
     }
     public Karte KarteZiehen() {
         //ToDo: Random Karte auswählen und zurückgeben.
