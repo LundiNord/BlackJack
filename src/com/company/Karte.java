@@ -2,7 +2,7 @@ package com.company;
 
 public class Karte
 {
-    private int wert;   //Ass=1, Zahlen = 1-10, Bild=10
+    private int wert;   //Ass=1, Zahlen = 2-10, Bild=10
 
     private boolean istAss = false;
     private boolean istBube = false;

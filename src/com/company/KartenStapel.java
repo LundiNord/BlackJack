@@ -3,6 +3,7 @@ package com.company;
 import java.util.Scanner;
 
 public class KartenStapel {          //Der Kartenstapel, bestehend aus 6 Decks mit je 52 Karten
+    private int Blätter;             //Anzahl der Blätter mit denen gespielt wird
     private int a;                   //Variable zum Sichern der genererierten Karte
     private int W1 = 4*Blätter;             //Wahrscheinlichkeiten
     private int W2 = 8*Blätter;
@@ -15,7 +16,7 @@ public class KartenStapel {          //Der Kartenstapel, bestehend aus 6 Decks m
     private int W9 = 44*Blätter;
     private int W10 = 48*Blätter;
     private int W11 = 52*Blätter;
-    private int Blätter;            //Anzahl der Blätter mit denen gespielt wird
+
 
     //ToDo: Array oder ähnliches um Kartenstapel zu Speichern
     public void setBlätter() {
