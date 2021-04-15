@@ -62,21 +62,6 @@ public abstract class Teilnehmer {               //Unterklassen: Spieler, Dealer
                 wert = x1;
         }
 
-
-
-
-        if(abstand1<abstand2){          //Abstandswerte vergleichen
-                wert = x1;
-            }
-        else {
-                wert = x2;
-            }
-
-
-
-
-
-
         return wert;
     }
     public boolean BlackJackDetektor() {        //true: BlackJack vorhanden
