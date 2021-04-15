@@ -15,7 +15,7 @@ public class Spiel {
         kartenstapel1 = new KartenStapel(6);
 
         //Nur zum Testen
-        //Spielstart();
+        Spielstart();
         debug();
 
     }
@@ -57,7 +57,7 @@ public class Spiel {
 
     public void debug() {                               //pls ignorieren
         interface1.ShowEinsatz(getEinsatz(0),0);
-        debug2();
+        //debug2();
         System.out.println("Hand Wert: "+getHandWert(0));
         System.out.println("BlackJack: "+CheckBlackJack(0));
 
