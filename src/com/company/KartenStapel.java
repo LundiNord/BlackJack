@@ -19,6 +19,18 @@ public class KartenStapel {          //Der Kartenstapel, bestehend aus 6 Decks m
 
     public KartenStapel(int Blätter) {
         this.Blätter = Blätter;
+        W1 = 4*Blätter;             //Wahrscheinlichkeiten
+        W2 = 8*Blätter;
+        W3 = 12*Blätter;
+        W4 = 16*Blätter;
+        W5 = 20*Blätter;
+        W6 = 24*Blätter;
+        W7 = 28*Blätter;
+        W8 = 32*Blätter;
+        W9 = 44*Blätter;
+        W10 = 48*Blätter;
+        W11 = 52*Blätter;
+
         //ToDo: am Anfang: Kartenstapel mischen uns speichern
 
     }
