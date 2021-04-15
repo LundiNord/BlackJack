@@ -34,13 +34,31 @@ public abstract class Teilnehmer {               //Unterklassen: Spieler, Dealer
         return x;
     }
     public int AssHändler(int wert, double anzahlAsse) {       //Alle kombinationen durchrechnen und beste Auswählen
+        int abstand1;
+        int abstand2;
         wert = (int) (wert-anzahlAsse);
-        int x = (int) Math.pow(2,anzahlAsse);
-        for (int i = 0; i < anzahlAsse; i++) {
+        int x1 = wert;
+        int x2 = wert;
+        int d = (int) Math.pow(2,anzahlAsse);   //Anzahl durchläufe | wahrscheinlich alles nicht nötig da selten mehr als 3 Asse
+        //for (int i = 0; i < d; i++) {
 
 
+            x1 = x1 + 1;
 
-        }
+            abstand1 = 21 -x1;
+
+            x1 = x1 + 11;
+            abstand2 = 21 - x1;
+
+            if(abstand1<abstand2){          //Abstandswerte vergleichen
+                wert = x1;
+            }
+            else {
+                wert = x2;
+            }
+        //}
+
+
 
 
 
