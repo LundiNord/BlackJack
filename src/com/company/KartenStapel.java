@@ -24,7 +24,7 @@ public class KartenStapel {          //Der Kartenstapel, bestehend aus 6 Decks m
     }
 
     public Karte KarteErzeugen() {
-        int[] Karten = new int[11];      //Array mit den Kartenwerten
+        int[] Karten = new int[12];      //Array mit den Kartenwerten
         Karten[1] = 2;
         Karten[2] = 3;
         Karten[3] = 4;
