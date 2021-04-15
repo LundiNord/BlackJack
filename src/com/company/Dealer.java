@@ -7,5 +7,5 @@ public class Dealer extends Teilnehmer {
 
     }
 
-
+    //Lol roffl
 }
