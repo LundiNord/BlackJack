@@ -97,7 +97,7 @@ public class KartenStapel {          //Der Kartenstapel, bestehend aus 6 Decks m
             W11 = W11 * Blätter - 1;
             istBube=true;
         }
-        if(istBube=true) {
+        if(istBube==true) {
             a = 10;
         }
 
