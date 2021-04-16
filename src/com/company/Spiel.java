@@ -16,7 +16,8 @@ public class Spiel {
 
         //Nur zum Testen
         Spielstart();
-        debug();
+        SpielMitte();
+        //debug();
 
     }
     public int getBlätter() {
@@ -45,9 +46,11 @@ public class Spiel {
     public void SpielMitte() {
         for(int i=0;i<=anzahlSpieler;i++)
         {
-            interface1.showHandwert(i,getHandWert(i));
-            while(interface1.KartenFragen(i)){
-                addKarten( kartenstapel1.KarteErzeugen(),i);
+            interface1.showHand(i,getHand(i));
+            while(interface1.KartenFragen(i))
+            {
+                addKarten(kartenstapel1.KarteErzeugen(), i);
+                interface1.showHand(i, getHand(i));
             }
         }
         //ToDo: Ablauf des Spieles Programmieren
@@ -78,6 +81,14 @@ public class Spiel {
         Spieler spieler1 = (Spieler) Player.get(spieler);
         return spieler1.BlackJackDetektor();
     }
+
+    public ArrayList getHand(int spieler)
+    {
+        Spieler spieler1 = (Spieler) Player.get(spieler);
+        return spieler1.getHandBlatt();
+    }
+
+
     //ToDo: weitere Variablen aus der Array List Player bekommen
     //wahrscheinlich geht das besser, weiß aber nicht wie
 
