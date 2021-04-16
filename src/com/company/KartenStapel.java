@@ -48,7 +48,7 @@ public class KartenStapel {          //Der Kartenstapel, bestehend aus 6 Decks m
         Karten[9] = 10;
         Karten[10] = 1;                    //Ass
         Karten[11] = 12;                  //Bube als 12, muss erkannt werden
-        int x = new java.util.Random().nextInt(52);
+        int x = new java.util.Random().nextInt(53);
 
         boolean istBube=false;
 
