@@ -24,4 +24,18 @@ public class Interface {
     public void ShowEinsatz(double einsatz, int spieler) {
         System.out.println("Spieler: "+spieler+" | Dein Einsatz ist: "+einsatz);
     }
+
+    public void showKarteDealer(Karte karte1) {               //Karte des Dealers anzeigen
+        int wert = karte1.getWert();
+        boolean istBube = karte1.istBube();
+        System.out.println("Der Dealer hat eine offene Karte gezogen:");
+        System.out.println("Ihr Wert ist: "+wert);
+        if(istBube==true) {
+            System.out.println("Sie ist ein Bube");
+        }
+        if(wert==1) {
+            System.out.println("Sie ist ein Ass");
+        }
+
+    }
 }

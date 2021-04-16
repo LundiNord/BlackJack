@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class Spiel {
     private int anzahlSpieler;
-    private Dealer dealer1;                             //Dealer deklarieren
+    private Dealer dealer0;                             //Dealer deklarieren
     private ArrayList Player = new ArrayList();        //Array List an Spielern |  Startet mit 0
     private Interface interface1;                      //Interface für das Spiel deklarieren
     private KartenStapel2 kartenstapel1;
@@ -26,16 +26,20 @@ public class Spiel {
     public void Spielstart() {          //Initialisieren des Spiel
         for(int i=0;i<anzahlSpieler;i++) {      //Spieler erzeugen
             Player.add(new Spieler(interface1.Einsatz(i)));
-            //ToDo: Dealer erzeugen und Startkarten austeilen
-            
-            //ToDo: offene Anfangskarten anzeigen
-            
-            //nur für debug
-            for(int s=0;s<52;s++){
-                addKarten(kartenstapel1.KarteErzeugen(), i);
-            }
-
+            addKarten(kartenstapel1.KarteErzeugen(), i);
+            addKarten(kartenstapel1.KarteErzeugen(), i);
         }
+            //Dealer erzeugen und Startkarten austeilen
+        dealer0 = new Dealer();
+        Karte karte1 = kartenstapel1.KarteErzeugen();
+        dealer0.updateHandBlatt(karte1);
+        interface1.showKarteDealer(karte1);
+            
+
+
+
+
+
     }
     
     public void SpielMitte() {
