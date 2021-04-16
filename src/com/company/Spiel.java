@@ -23,7 +23,7 @@ public class Spiel {
         return Blätter;
     }
 
-    public void Spielstart() {          //Initialisieren des Spiel
+    public void Spielstart() {                  //Initialisieren des Spiel
         for(int i=0;i<anzahlSpieler;i++) {      //Spieler erzeugen
             Player.add(new Spieler(interface1.Einsatz(i)));
             addKarten(kartenstapel1.KarteErzeugen(), i);
@@ -74,7 +74,15 @@ public class Spiel {
     //ToDo: weitere Variablen aus der Array List Player bekommen
     //wahrscheinlich geht das besser, weiß aber nicht wie
 
-
+    public void Auswertung()
+    {
+        int [] Handwerte = new int[Player.size()+1];
+        for(int i=0;i<=Player.size();i++)
+        {
+            Handwerte[i]= getHandWert(i);
+        }
+        Handwerte[Player.size()+1]= dealer0.getHandwert;
+    }
 
     public void debug() {                               //pls ignorieren
         interface1.ShowEinsatz(getEinsatz(0),0);
