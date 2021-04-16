@@ -10,7 +10,7 @@ public class Interface {
 
     public double Einsatz(int spieler) {        //Der wievielte Spieler wird erzeugt ! 0=1
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Spieler: "+spieler+" | Wie hoch soll dein Einsatz sein?");
+        System.out.println("Spieler"+spieler+": Wie hoch soll dein Einsatz sein?");
         double x = scanner.nextDouble();
         //Typprüfung notwendig??
         return x;
@@ -27,18 +27,19 @@ public class Interface {
         System.out.println("Spieler: "+spieler+" | Dein Einsatz ist: "+einsatz);
     }
 
-    public boolean KartenFragen(int spieler){
-        boolean Ja= false;
-        System.out.println();
+    public boolean KartenFragen(int spieler){       //Spieler fragen ob sie neue Karten möchten
+        boolean Ja = false;
+        System.out.println("Spieler"+spieler+": Möchtest du eine neue Karte ziehen? J/N");
         Scanner scanner = new Scanner(System.in);
-        System.out.println();
         char x = scanner.next().charAt(0);
-        //Typprüfung notwendig??
-        if(x=='J'){
+        if(x=='J'||x=='j'){
            Ja=true;
         }
-        if(x=='N'){
+        else if(x=='N'||x=='j'){
             Ja=false;
+        }
+        else {              //Nur j/n erlauben
+            Ja = KartenFragen(spieler);
         }
         return Ja;
     }
@@ -48,30 +49,37 @@ public class Interface {
         System.out.println("Der Dealer hat eine offene Karte gezogen:");
         System.out.println("Ihr Wert ist: "+wert);
         if(istBube==true) {
-            System.out.println("Sie ist ein Bube");
+            System.out.println("    Sie ist ein Bube");
         }
-        if(wert==1) {
-            System.out.println("Sie ist ein Ass");
+        else if(wert==1) {
+            System.out.println("    Sie ist ein Ass");
         }
-
     }
-    public void showHand(int spieler, ArrayList Hand){
+    public void showHand(int spieler, ArrayList Hand){              //gibt alle Karten auf der Hand aus
         for(int i=0;i<Hand.size();i++){
             Karte karte1 =(Karte) Hand.get(i);
             int x= karte1.getWert();
             boolean istBube=karte1.istBube();
-            System.out.println("Spieler"+spieler+" du hast auf der Hand:"+x);
+            System.out.println("Spieler"+spieler+": du hast diese Karte auf der Hand:"+x);
             if(istBube==true) {
-                System.out.println("Es ist ein Bube");
+                System.out.println("    Es ist ein Bube.");
             }
             if(x==1) {
-                System.out.println("Es ist ein Ass");
+                System.out.println("    Es ist ein Ass.");
             }
         }
     }
     public void showHandwert(int spieler, int Handwert){ //throws InterruptedException
-        System.out.println("Bitte schaut weg");
-       // TimeUnit.SECONDS.sleep(5);
-        System.out.println("Spieler"+spieler+"Dein Handwert ist:"+Handwert);
+        System.out.println("Spieler"+spieler+": Dein Handwert ist: "+Handwert);
+    }
+    public void verloren(int spieler) {
+        System.out.println("Spieler"+spieler+": Du hast verloren");
+    }
+    public void spielerWechsel(int nspieler) {          //Spieler wechseln
+        System.out.println("---------");
+        System.out.println("Jetzt ist Spieler "+nspieler+" dran. Bitte wegschauen!");
+        System.out.println("---------");
+        //ToDo: Wartezeit
+        //Thread.sleep(1000);
     }
 }

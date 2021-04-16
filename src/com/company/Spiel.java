@@ -35,33 +35,35 @@ public class Spiel {
         Karte karte1 = kartenstapel1.KarteErzeugen();
         dealer0.updateHandBlatt(karte1);
         interface1.showKarteDealer(karte1);
-            
-
-
-
-
-
     }
     
-    public void SpielMitte() {
-        for(int i=0;i<=anzahlSpieler;i++)
+    public void SpielMitte() {              //Spieler dürfen mehr Karten ziehen
+        for(int i=0;i<anzahlSpieler;i++)
         {
+            interface1.spielerWechsel(i);
             interface1.showHand(i,getHand(i));
-            while(interface1.KartenFragen(i))
+            boolean stop = false;
+            while(stop==false&&interface1.KartenFragen(i))
             {
                 addKarten(kartenstapel1.KarteErzeugen(), i);
                 interface1.showHand(i, getHand(i));
+                if(getHandWert(i)>=21) {        //Wenn sie zu viel ziehen haben sie verloren
+                    stop = true;
+                    interface1.verloren(i);
+                }
             }
+            interface1.showHandwert(i,getHandWert(i));
         }
-        //ToDo: Ablauf des Spieles Programmieren
-        
-        //ToDo: Ablauf anzeigen
     }
     
-    public void SpielEnde() {
+    public void SpielEnde() {           //Auswertung des Spieles
         //ToDo: Ende des Spieles und Gewinne berechnen
-        
         //ToDo: Sieger  und Gewinne anzeigen
+
+
+
+
+
     }
     
     public void addKarten(Karte karte1, int spieler) {      //Karten in ein Karten Array eines Spielers einfügen
