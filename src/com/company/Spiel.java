@@ -26,15 +26,30 @@ public class Spiel {
     public void Spielstart() {          //Initialisieren des Spiel
         for(int i=0;i<anzahlSpieler;i++) {      //Spieler erzeugen
             Player.add(new Spieler(interface1.Einsatz(i)));
-
-
+            //ToDo: Dealer erzeugen und Startkarten austeilen
+            
+            //ToDo: offene Anfangskarten anzeigen
+            
+            //nur für debug
             for(int s=0;s<52;s++){
                 addKarten(kartenstapel1.KarteErzeugen(), i);
             }
 
         }
-
     }
+    
+    public void SpielMitte() {
+        //ToDo: Ablauf des Spieles Programmieren
+        
+        //ToDo: Ablauf anzeigen
+    }
+    
+    public void SpielEnde() {
+        //ToDo: Ende des Spieles und Gewinne berechnen
+        
+        //ToDo: Sieger  und Gewinne anzeigen
+    }
+    
     public void addKarten(Karte karte1, int spieler) {      //Karten in ein Karten Array eines Spielers einfügen
         Spieler spieler1 = (Spieler) Player.get(spieler);
         spieler1.updateHandBlatt(karte1);
