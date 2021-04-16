@@ -1,5 +1,7 @@
 package com.company;
+import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class Interface {
     public Interface() {
@@ -25,6 +27,21 @@ public class Interface {
         System.out.println("Spieler: "+spieler+" | Dein Einsatz ist: "+einsatz);
     }
 
+    public boolean KartenFragen(int spieler){
+        boolean Ja= false;
+        System.out.println();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println();
+        char x = scanner.next().charAt(0);
+        //Typprüfung notwendig??
+        if(x=='J'){
+           Ja=true;
+        }
+        if(x=='N'){
+            Ja=false;
+        }
+        return Ja;
+    }
     public void showKarteDealer(Karte karte1) {               //Karte des Dealers anzeigen
         int wert = karte1.getWert();
         boolean istBube = karte1.istBube();
@@ -37,5 +54,24 @@ public class Interface {
             System.out.println("Sie ist ein Ass");
         }
 
+    }
+    public void showHand(int spieler, ArrayList Hand){
+        for(int i=0;i<Hand.size();i++){
+            Karte karte1 =(Karte) Hand.get(i);
+            int x= karte1.getWert();
+            boolean istBube=karte1.istBube();
+            System.out.println("Spieler"+spieler+" du hast auf der Hand:"+x);
+            if(istBube==true) {
+                System.out.println("Es ist ein Bube");
+            }
+            if(x==1) {
+                System.out.println("Es ist ein Ass");
+            }
+        }
+    }
+    public void showHandwert(int spieler, int Handwert){ //throws InterruptedException
+        System.out.println("Bitte schaut weg");
+       // TimeUnit.SECONDS.sleep(5);
+        System.out.println("Spieler"+spieler+"Dein Handwert ist:"+Handwert);
     }
 }

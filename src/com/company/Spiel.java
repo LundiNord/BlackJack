@@ -43,6 +43,13 @@ public class Spiel {
     }
     
     public void SpielMitte() {
+        for(int i=0;i<=anzahlSpieler;i++)
+        {
+            interface1.showHandwert(i,getHandWert(i));
+            while(interface1.KartenFragen(i)){
+                addKarten( kartenstapel1.KarteErzeugen(),i);
+            }
+        }
         //ToDo: Ablauf des Spieles Programmieren
         
         //ToDo: Ablauf anzeigen
@@ -81,9 +88,21 @@ public class Spiel {
         {
             Handwerte[i]= getHandWert(i);
         }
-        Handwerte[Player.size()+1]= dealer0.getHandwert;
+        Handwerte[Player.size()+1]= dealer0.handWert();
+        Handwerte= sortiere(Handwerte);
     }
-
+    public int[] sortiere(int[] liste) {
+        for (int z = liste.length; z > 1; z = z - 1) {
+            for (int i = 0; i < liste.length - 1; i++) {
+                if (liste[i] > liste[i + 1]) {                           //vertausche:
+                    int hilf = liste[i];
+                    liste[i] = liste[i + 1];
+                    liste[i + 1] = hilf;
+                }
+            }
+        }
+        return liste;
+    }
     public void debug() {                               //pls ignorieren
         interface1.ShowEinsatz(getEinsatz(0),0);
 
