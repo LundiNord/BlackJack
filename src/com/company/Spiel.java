@@ -97,15 +97,15 @@ public class Spiel {
             }
             else if(dealer0.handWert()<=21) {          //Wenn der Spieler höher ist
                 for(int i=0;i<Player.size();i++) {          //alle Spieler durchgehen
-                    if(dealer0.handWert()>Handwerte[Player.size()][1]) {
+                    if(dealer0.handWert()>Handwerte[Player.size()-1][1]) {
                         int spieler = Handwerte[0][0];
                         setEinsatz(getEinsatz(spieler)*2,spieler);
                     }
-                    else if(dealer0.handWert()>Handwerte[Player.size()][1]) {
+                    else if(dealer0.handWert()>Handwerte[Player.size()-1][1]) {
                         int spieler = Handwerte[0][0];
                         setEinsatz(0,spieler);
                     }
-                    else if(dealer0.handWert()==Handwerte[Player.size()][1]) {
+                    else if(dealer0.handWert()==Handwerte[Player.size()-1][1]) {
                         //nichts
                     }
                 }
