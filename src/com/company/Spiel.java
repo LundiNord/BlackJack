@@ -109,9 +109,7 @@ public class Spiel {
                         //nichts
                     }
                 }
-
             }
-
         }
         else if(stop==true) {           //Wenn es einen BlackJack gibt haben alle anderen verloren
             for(int i=0;i<Player.size();i++) {      //Nach BlackJack schauen
@@ -198,12 +196,12 @@ public class Spiel {
         return liste;
     }
     public void debug() {                               //pls ignorieren
-        interface1.ShowEinsatz(getEinsatz(0),0);
-
-        System.out.println("Hand Wert: "+getHandWert(0));
-        System.out.println("BlackJack: "+CheckBlackJack(0));
-
-
+        Karte karte1 = new Karte(1,false);
+        Karte karte2 = new Karte(4,false);
+        Spieler spieler1 = new Spieler(0);
+        spieler1.updateHandBlatt(karte1);
+        spieler1.updateHandBlatt(karte2);
+        System.out.println(spieler1.handWert());
     }
 
 

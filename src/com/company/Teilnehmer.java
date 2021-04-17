@@ -60,10 +60,10 @@ public abstract class Teilnehmer {               //Unterklassen: Spieler, Dealer
             abstand2= 21 -x2;
         }
         if(abstand1<0) {       //besseren Wert nehmen
-            wert = x2;
+            wert = x1;
         }
         else {
-                wert = x1;
+                wert = x2;
         }
         return wert;
     }
