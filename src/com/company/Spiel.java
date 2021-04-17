@@ -131,7 +131,7 @@ public class Spiel {
             }
         }
         for(int i=0;i<Player.size();i++) {      //Einsatz für alle Spieler anzeigen
-            interface1.ShowEinsatz(getEinsatz(0),0);
+            interface1.ShowEinsatz(getEinsatz(i),i);
         }
     }
     
