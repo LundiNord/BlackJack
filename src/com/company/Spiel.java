@@ -8,6 +8,8 @@ public class Spiel {
     private Interface interface1;                      //Interface für das Spiel deklarieren
     private KartenStapel2 kartenstapel1;
     private int Blätter;
+    private int[] spieler;
+    private int [] [] a;
 
     public Spiel(int anzahlSpieler) {
         this.anzahlSpieler = anzahlSpieler;
@@ -27,6 +29,7 @@ public class Spiel {
     public void Spielstart() {                  //Initialisieren des Spiel
         for(int i=0;i<anzahlSpieler;i++) {      //Spieler erzeugen
             Player.add(new Spieler(interface1.Einsatz(i)));
+            spieler[i]=i;
             addKarten(kartenstapel1.KarteErzeugen(), i);
             addKarten(kartenstapel1.KarteErzeugen(), i);
         }
@@ -94,23 +97,36 @@ public class Spiel {
     //ToDo: weitere Variablen aus der Array List Player bekommen
     //wahrscheinlich geht das besser, weiß aber nicht wie
 
-    public void Auswertung()
-    {
-        int [] Handwerte = new int[Player.size()+1];
+    //public void Auswertung()
+   // {
+     //   int [] Handwerte = new int[Player.size()+1];
+     //   for(int i=0;i<=Player.size();i++)
+    //    {
+    //        Handwerte[i]= getHandWert(i);
+     //   }
+     //   Handwerte[Player.size()+1]= dealer0.handWert();
+     //   Handwerte= sortiere(Handwerte);
+ //   }
+
+    public void Auswertung2(){
+        int [] Handwerte = new int[Player.size()];
         for(int i=0;i<=Player.size();i++)
         {
             Handwerte[i]= getHandWert(i);
         }
-        Handwerte[Player.size()+1]= dealer0.handWert();
-        Handwerte= sortiere(Handwerte);
+        for(int i=0;i<=Player.size();i++){
+            a= new int[Player.size()][2];
+            a[i][i]= a[spieler[i]][Handwerte[i]];
+        }
+        a=sortiere(a);
     }
-    public int[] sortiere(int[] liste) {
+    public int[][] sortiere(int[][] liste) {
         for (int z = liste.length; z > 1; z = z - 1) {
             for (int i = 0; i < liste.length - 1; i++) {
-                if (liste[i] > liste[i + 1]) {                           //vertausche:
-                    int hilf = liste[i];
-                    liste[i] = liste[i + 1];
-                    liste[i + 1] = hilf;
+                if (liste[i][i] > liste[i][i + 1]) {                           //vertausche:
+                    int hilf = liste[i][i];
+                    liste[i][i] = liste[i][i + 1];
+                    liste[i][i + 1] = hilf;
                 }
             }
         }
