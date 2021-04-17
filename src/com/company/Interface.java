@@ -24,7 +24,7 @@ public class Interface {
         return x;
     }
     public void ShowEinsatz(double einsatz, int spieler) {
-        System.out.println("Spieler: "+spieler+" | Dein Einsatz ist: "+einsatz);
+        System.out.println("Spieler"+spieler+": Dein Einsatz ist: "+einsatz);
     }
 
     public boolean KartenFragen(int spieler){       //Spieler fragen ob sie neue Karten möchten
@@ -85,4 +85,5 @@ public class Interface {
     public void ShowWinner(int [][]spieler){
         System.out.println("Der Gewinner ist: "+spieler);
     }
+
 }

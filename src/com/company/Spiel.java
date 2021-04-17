@@ -65,13 +65,14 @@ public class Spiel {
     }
     
     public void SpielEnde() {           //Auswertung des Spieles
-        int[][] Handwerte = Auswertung2();
+
         for(int i=0;i<Player.size();i++) {      //Über 21 aussortieren
             if(getHandWert(i)>21) {
                 setEinsatz(0,i);
                 setHandwertNull(i);
             }
         }
+        int[][] Handwerte = Auswertung2();
         boolean stop = false;
         for(int i=0;i<Player.size();i++) {      //Nach BlackJack schauen: Gewinn
            if(CheckBlackJack(i)==true&&(getHandWert(i)<=21)) {
@@ -80,7 +81,7 @@ public class Spiel {
            }
         }
 
-        if(dealer0.BlackJackDetektor()==true) {     //Wenn Dealer einen BlackJaxk hat
+        if(dealer0.BlackJackDetektor()==true&&dealer0.handWert()<=21) {     //Wenn Dealer einen BlackJack hat
             //Pech gehabt
             for(int i=0;i<Player.size();i++) {      //Nach BlackJack schauen
                 if (CheckBlackJack(i) == false) {
@@ -89,22 +90,22 @@ public class Spiel {
             }
         }
         else if(stop==false){      //Wenn er keinen hat: Nach Wert schauen
-            if(dealer0.handWert()>Handwerte[0][1]) {        //Wenn der Dealer höher ist: alle verlieren
+            if(dealer0.handWert()>Handwerte[Player.size()-1][1]&&dealer0.handWert()<=21) {        //Wenn der Dealer höher ist: alle verlieren
                 for(int i=0;i<Player.size();i++) {
                     setEinsatz(0,i);
                 }
             }
-            else {          //Wenn der Spieler höher ist
+            else if(dealer0.handWert()<=21) {          //Wenn der Spieler höher ist
                 for(int i=0;i<Player.size();i++) {          //alle Spieler durchgehen
-                    if(dealer0.handWert()>Handwerte[0][1]) {
+                    if(dealer0.handWert()>Handwerte[Player.size()][1]) {
                         int spieler = Handwerte[0][0];
                         setEinsatz(getEinsatz(spieler)*2,spieler);
                     }
-                    else if(dealer0.handWert()>Handwerte[0][1]) {
+                    else if(dealer0.handWert()>Handwerte[Player.size()][1]) {
                         int spieler = Handwerte[0][0];
                         setEinsatz(0,spieler);
                     }
-                    else if(dealer0.handWert()==Handwerte[0][1]) {
+                    else if(dealer0.handWert()==Handwerte[Player.size()][1]) {
                         //nichts
                     }
                 }
@@ -118,6 +119,19 @@ public class Spiel {
                     setEinsatz(0, i);            //Alles verloren
                 }
             }
+        }
+        else if(dealer0.handWert()>21&&stop==false) {
+            for(int i=0;i<Player.size();i++) {
+                if(getHandWert(i)<=21) {
+                    setEinsatz(getEinsatz(i)*2,i);
+                }
+                else {
+                    setEinsatz(0,i);
+                }
+            }
+        }
+        for(int i=0;i<Player.size();i++) {      //Einsatz für alle Spieler anzeigen
+            interface1.ShowEinsatz(getEinsatz(0),0);
         }
     }
     
