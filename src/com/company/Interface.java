@@ -82,7 +82,7 @@ public class Interface {
         //ToDo: Wartezeit
         //Thread.sleep(1000);
     }
-    public void ShowWinner(int [][]a){
-        System.out.println(a);
+    public void ShowWinner(int [][]spieler){
+        System.out.println("Der Gewinner ist: "+spieler);
     }
 }
