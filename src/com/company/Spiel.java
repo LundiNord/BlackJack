@@ -56,8 +56,8 @@ public class Spiel {
             }
             interface1.showHandwert(i,getHandWert(i));
         }
-        //Dealer zieht Karten bis er über 16 ist
-        while(dealer0.handWert()<17) {
+        //Dealer zieht Karten bis er über 16 ist oder ein BlackJack hat
+        while(dealer0.handWert()<17&&dealer0.BlackJackDetektor()==false) {
             Karte karte1 = kartenstapel1.KarteErzeugen();
             dealer0.updateHandBlatt(karte1);
             interface1.showKarteDealer(karte1);
