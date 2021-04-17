@@ -49,22 +49,76 @@ public class Spiel {
             {
                 addKarten(kartenstapel1.KarteErzeugen(), i);
                 interface1.showHand(i, getHand(i));
-                if(getHandWert(i)>=21) {        //Wenn sie zu viel ziehen haben sie verloren
+                if(getHandWert(i)>21) {        //Wenn sie zu viel ziehen haben sie verloren
                     stop = true;
                     interface1.verloren(i);
                 }
             }
             interface1.showHandwert(i,getHandWert(i));
         }
+        //Dealer zieht Karten bis er über 16 ist
+        while(dealer0.handWert()<17) {
+            Karte karte1 = kartenstapel1.KarteErzeugen();
+            dealer0.updateHandBlatt(karte1);
+            interface1.showKarteDealer(karte1);
+        }
     }
     
     public void SpielEnde() {           //Auswertung des Spieles
-        Auswertung2();
+        int[][] Handwerte = Auswertung2();
+        for(int i=0;i<Player.size();i++) {      //Über 21 aussortieren
+            if(getHandWert(i)>21) {
+                setEinsatz(0,i);
+                setHandwertNull(i);
+            }
+        }
+        boolean stop = false;
+        for(int i=0;i<Player.size();i++) {      //Nach BlackJack schauen: Gewinn
+           if(CheckBlackJack(i)==true&&(getHandWert(i)<=21)) {
+               setEinsatz(getEinsatz(i) * 2.5, i);
+               stop = true;
+           }
+        }
 
-        //interface1.ShowWinner(a);
-        //ToDo: Ende des Spieles und Gewinne berechnen
-        //ToDo: Sieger  und Gewinne anzeigen
+        if(dealer0.BlackJackDetektor()==true) {     //Wenn Dealer einen BlackJaxk hat
+            //Pech gehabt
+            for(int i=0;i<Player.size();i++) {      //Nach BlackJack schauen
+                if (CheckBlackJack(i) == false) {
+                    setEinsatz(0,i);            //Alles verloren
+                }
+            }
+        }
+        else if(stop==false){      //Wenn er keinen hat: Nach Wert schauen
+            if(dealer0.handWert()>Handwerte[0][1]) {        //Wenn der Dealer höher ist: alle verlieren
+                for(int i=0;i<Player.size();i++) {
+                    setEinsatz(0,i);
+                }
+            }
+            else {          //Wenn der Spieler höher ist
+                for(int i=0;i<Player.size();i++) {          //alle Spieler durchgehen
+                    if(dealer0.handWert()>Handwerte[0][1]) {
+                        int spieler = Handwerte[0][0];
+                        setEinsatz(getEinsatz(spieler)*2,spieler);
+                    }
+                    else if(dealer0.handWert()>Handwerte[0][1]) {
+                        int spieler = Handwerte[0][0];
+                        setEinsatz(0,spieler);
+                    }
+                    else if(dealer0.handWert()==Handwerte[0][1]) {
+                        //nichts
+                    }
+                }
 
+            }
+
+        }
+        else if(stop==true) {           //Wenn es einen BlackJack gibt haben alle anderen verloren
+            for(int i=0;i<Player.size();i++) {      //Nach BlackJack schauen
+                if (CheckBlackJack(i) == false) {
+                    setEinsatz(0, i);            //Alles verloren
+                }
+            }
+        }
     }
     
     public void addKarten(Karte karte1, int spieler) {      //Karten in ein Karten Array eines Spielers einfügen
@@ -75,6 +129,12 @@ public class Spiel {
     public double getEinsatz(int spieler) {                 //Einsatz eines Spielers bekommen
         Spieler spieler1 = (Spieler) Player.get(spieler);
         return spieler1.getEinsatz();
+    }
+    public void setEinsatz(double einsatz,int spieler){     //Einsatz in den Spieler schreiben
+        Spieler spieler1 = (Spieler) Player.get(spieler);
+        spieler1.setEinsatz(einsatz);
+        Player.set(spieler,spieler1);
+
     }
     public int getHandWert(int spieler) {
         Spieler spieler1 = (Spieler) Player.get(spieler);
@@ -89,9 +149,14 @@ public class Spiel {
         Spieler spieler1 = (Spieler) Player.get(spieler);
         return spieler1.getHandBlatt();
     }
+    public void setHandwertNull(int spieler) {      //Hand Blatt leeren
+        Spieler spieler1 = (Spieler) Player.get(spieler);
+        spieler1.BlattLeeren();
+        Player.set(spieler,spieler1);
+    }
 
 
-    public void Auswertung2(){
+    public int[][] Auswertung2(){
 
         int [] [ ] Handwerte = new int[Player.size()] [2];
         for(int i=0;i<Player.size();i++)    //HandWerte der Spieler in ein Array stecken mit Spielernummer
@@ -101,6 +166,7 @@ public class Spiel {
         }
 
         Handwerte =sortiere(Handwerte);
+        return Handwerte;
     }
     public int[][] sortiere(int[][] liste) {                //Bubble Sort sortierer
         for (int z = liste.length; z > 1; z = z - 1) {

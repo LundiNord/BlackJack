@@ -13,6 +13,9 @@ public abstract class Teilnehmer {               //Unterklassen: Spieler, Dealer
     public void updateHandBlatt(Karte neueKarte) {      //Hinzufügen neuer Karten
         HandBlatt.add(neueKarte);
     }
+    public void BlattLeeren() {     //Hand Blatt leeren
+        HandBlatt = null;
+    }
 
 
     public int handWert() {         //Berechnet den gesamtwert der Karten auf der Hand
