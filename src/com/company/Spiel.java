@@ -29,7 +29,7 @@ public class Spiel {
     public void Spielstart() {                  //Initialisieren des Spiel
         for(int i=0;i<anzahlSpieler;i++) {      //Spieler erzeugen
             Player.add(new Spieler(interface1.Einsatz(i)));
-            spieler[i]=i;
+           // spieler[i]=i;
             addKarten(kartenstapel1.KarteErzeugen(), i);
             addKarten(kartenstapel1.KarteErzeugen(), i);
         }
@@ -60,12 +60,10 @@ public class Spiel {
     }
     
     public void SpielEnde() {           //Auswertung des Spieles
+        Auswertung2();
+        interface1.ShowWinner(a);
         //ToDo: Ende des Spieles und Gewinne berechnen
         //ToDo: Sieger  und Gewinne anzeigen
-
-
-
-
 
     }
     

@@ -35,7 +35,7 @@ public class Interface {
         if(x=='J'||x=='j'){
            Ja=true;
         }
-        else if(x=='N'||x=='j'){
+        else if(x=='N'||x=='n'){
             Ja=false;
         }
         else {              //Nur j/n erlauben
@@ -81,5 +81,8 @@ public class Interface {
         System.out.println("---------");
         //ToDo: Wartezeit
         //Thread.sleep(1000);
+    }
+    public void ShowWinner(int [][]a){
+        System.out.println(a);
     }
 }
