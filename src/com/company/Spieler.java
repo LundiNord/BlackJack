@@ -3,6 +3,7 @@ package com.company;
 public class Spieler extends Teilnehmer{
 
     private double einsatz;     //Spieler haben einsätze
+    private double konto;       //Konto des Spielers
 
     public Spieler(double einsatz)
     {

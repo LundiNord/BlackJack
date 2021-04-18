@@ -9,10 +9,10 @@ public class Spiel {
     private KartenStapel2 kartenstapel1;
     private int Blätter;
 
-    public Spiel(int anzahlSpieler) {
+    public Spiel(int anzahlSpieler, int anzahlBlätter) {
         this.anzahlSpieler = anzahlSpieler;
         interface1 = new Interface();           //Interface erzeugen
-        kartenstapel1 = new KartenStapel2(1);
+        kartenstapel1 = new KartenStapel2(anzahlBlätter);
 
         //Nur zum Testen
         Spielstart();

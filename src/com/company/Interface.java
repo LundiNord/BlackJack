@@ -33,7 +33,7 @@ public class Interface {
         Scanner scanner = new Scanner(System.in);
         char x = scanner.next().charAt(0);
         if(x=='J'||x=='j'){
-           Ja=true;
+            Ja=true;
         }
         else if(x=='N'||x=='n'){
             Ja=false;
