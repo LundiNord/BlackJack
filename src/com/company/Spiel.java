@@ -80,7 +80,7 @@ public class Spiel {
                stop = true;
            }
         }
-
+            //FixMe alles kaputt
         if(dealer0.BlackJackDetektor()==true&&dealer0.handWert()<=21) {     //Wenn Dealer einen BlackJack hat
             //Pech gehabt
             for(int i=0;i<Player.size();i++) {      //Nach BlackJack schauen
@@ -203,7 +203,4 @@ public class Spiel {
         spieler1.updateHandBlatt(karte2);
         System.out.println(spieler1.handWert());
     }
-
-
-
 }
