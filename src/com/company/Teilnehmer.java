@@ -15,7 +15,7 @@ public abstract class Teilnehmer {               //Unterklassen: Spieler, Dealer
     }
     public void BlattLeeren() {     //Hand Blatt leeren
         for(int i=0;i<HandBlatt.size();i++) {
-            HandBlatt.remove(i);
+            HandBlatt = new ArrayList();
         }
     }
 
