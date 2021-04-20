@@ -32,7 +32,7 @@ public class Spiel {
             addKarten(kartenstapel1.KarteErzeugen(), i);
             addKarten(kartenstapel1.KarteErzeugen(), i);
         }
-            //Dealer erzeugen und Startkarten austeilen
+        //Dealer erzeugen und Startkarten austeilen
         dealer0 = new Dealer();
         Karte karte1 = kartenstapel1.KarteErzeugen();
         dealer0.updateHandBlatt(karte1);

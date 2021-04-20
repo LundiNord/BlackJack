@@ -4,9 +4,7 @@ import java.util.ArrayList;
 public class Management {     //Management um mehrere Runden zu spielen
     private ArrayList Player = new ArrayList();
     private ManagerInterface mInterface1;
-       private int Blätter;
-    private Spiel spiel1;
-
+    private int Blätter;
 
     public Management ()
     {
@@ -25,7 +23,7 @@ public class Management {     //Management um mehrere Runden zu spielen
         }
     }
     public void Spiel() {           //Das Spiel wird aufgerufen und ausgeführt
-        spiel1 = new Spiel(Blätter,Player);
+        Spiel spiel1 = new Spiel(Blätter,Player);
         Player= spiel1.SpielAusführen();
         for(int i=0;i<Player.size();i++){
             Spieler spieler1=(Spieler) Player.get(i);

@@ -1,6 +1,4 @@
 package com.company;
-
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ManagerInterface
@@ -38,7 +36,7 @@ public class ManagerInterface
         return x;
     }
     public boolean NeueRunde(){
-        boolean Ja = false;
+        boolean Ja;
         System.out.println("-----------------------------");
         System.out.println("-----------------------------");
         System.out.println("Möchtet ihr eine neue Runde spielen? J/N");
