@@ -19,27 +19,15 @@ public class ManagerInterface
         return x;
 
     }
-
     public int Blätterabfrage(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Wie viele Blätter möchtest du?");
         int x = scanner.nextInt();
-            if(x<=1){
+            if(x<1){
                 x= Blätterabfrage();
             }
             return x;
     }
-
-
-
-    public void spielerWechsel(int nspieler) {          //Spieler wechseln
-        System.out.println("---------");
-        System.out.println("Jetzt ist Spieler " + nspieler + " dran. Bitte wegschauen!");
-        System.out.println("---------");
-        //ToDo: Wartezeit
-        //Thread.sleep(1000);
-    }
-
     public int Spielerabfrage(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Wie viele Spieler seid ihr/du?");
@@ -49,7 +37,6 @@ public class ManagerInterface
         }
         return x;
     }
-
     public boolean NeueRunde(){
         boolean Ja = false;
         System.out.println("-----------------------------");

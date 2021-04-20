@@ -31,7 +31,6 @@ public abstract class Teilnehmer {               //Unterklassen: Spieler, Dealer
                 a = a+1;
             }
         }
-        //ToDo: Was mit den Assen?
         if(a>0) {           //Sich um Asse kümmern
            x = AssHändler(x,a);
         }
@@ -71,7 +70,6 @@ public abstract class Teilnehmer {               //Unterklassen: Spieler, Dealer
         boolean vorhanden = false;
         boolean Ass = false;
         boolean Bube = false;
-        //ToDo: Ass+Bube erkennen
         for(int i=0;i<HandBlatt.size();i++) {
             Karte karte1 = (Karte) HandBlatt.get(i);
             if(Ass==false) {                        //Überschreibungen des Ergebnisses verhindern

@@ -2,7 +2,6 @@ package com.company;
 import java.util.ArrayList;
 
 public class Management {     //Management um mehrere Runden zu spielen
-    //ToDo: Weg um Spieler zu speichern
     private ArrayList Player = new ArrayList();
     private ManagerInterface mInterface1;
        private int Blätter;
@@ -34,14 +33,14 @@ public class Management {     //Management um mehrere Runden zu spielen
             mInterface1.KontostandAusgeben(i,spieler1.getKonto());  //Kontostand ausgeben
         }
         if (mInterface1.mehrGeld()==true){      //Geld einzahlen
-            for(int i=0; i<= Player.size();i++){
+            for(int i=0; i<Player.size();i++){
                 Spieler spieler1=(Spieler) Player.get(i);
                 spieler1.Einzahlung(mInterface1.einzahlung(i));
                 Player.set(i,spieler1);
             }
         }
         //Wenn man kein Geld mehr hat fliegt man raus
-        for(int i=0; i<= Player.size();i++) {
+        for(int i=0; i<Player.size();i++) {
             Spieler spieler1 = (Spieler) Player.get(i);
             if(spieler1.getKonto()<=0) {
                 Player.remove(i);
