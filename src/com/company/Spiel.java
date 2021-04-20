@@ -27,7 +27,7 @@ public class Spiel {
     public void Spielstart() {                  //Initialisieren des Spiel
         for(int i=0;i< Player.size();i++) {      //Spieler erzeugen
             //setEinsatz(interface1.Einsatz(i),i);
-            EinsatzAbziehen(i);
+            double x = EinsatzAbziehen(i);      //x ist irrelevant
 
             addKarten(kartenstapel1.KarteErzeugen(), i);
             addKarten(kartenstapel1.KarteErzeugen(), i);
@@ -114,15 +114,16 @@ public class Spiel {
             setHandwertNull(i);
         }
     }
-    public void EinsatzAbziehen(int spieler){
+    public double EinsatzAbziehen(int spieler){
         double e = interface1.Einsatz(spieler);     //Einsatz erfragen
         Spieler spieler1 = (Spieler)Player.get(spieler);
         double k = spieler1.getKonto();
         if((k-e)<0) {       //Wenn zu hoch, dann warnen und nochmal
             interface1.achtungEinsatz(spieler);
-            EinsatzAbziehen(spieler);
+            e = EinsatzAbziehen(spieler);
         }
         setEinsatz(e,spieler);
+        return e;
     }
     public void addKarten(Karte karte1, int spieler) {      //Karten in ein Karten Array eines Spielers einfügen
         Spieler spieler1 = (Spieler) Player.get(spieler);
