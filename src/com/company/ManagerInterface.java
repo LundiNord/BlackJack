@@ -17,6 +17,7 @@ public class ManagerInterface
         return x;
 
     }
+
     public int Blätter(int Blätter){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Wie viele Blätter möchtest du?"+Blätter);
@@ -33,5 +34,12 @@ public class ManagerInterface
         //Thread.sleep(1000);
     }
 
+    public int Spielerabfrage(int spielerAnzahl){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Wie viele Spieler seid ihr/du?");
+        int x = scanner.nextInt();
+        //Typprüfung notwendig??
+        return x;
+    }
 
 }

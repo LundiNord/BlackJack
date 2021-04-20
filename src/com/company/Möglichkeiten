@@ -6,5 +6,6 @@ Spieler niedriger als Dealer - x0
 Spieler gleich Dealer- x1
 ^^Spieler über 21- x0
 
-Dealer hat als einziger Blackjack- alle x0
-sonst Spieler mit Blackjack- x1
+^^Dealer hat als einziger Blackjack- alle x0
+^^sonst Spieler mit Blackjack- x1
+^^Dealer über 21- x2
