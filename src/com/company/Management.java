@@ -26,7 +26,8 @@ public class Management {     //Management um mehrere Runden zu spielen
         }
     }
     public void Spiel() {           //Das Spiel wird aufgerufen und ausgeführt
-        Player= spiel1.Spiel(Blätter,Player);
+        spiel1 = new Spiel(Blätter,Player);
+        Player= spiel1.SpielAusführen();
         for(int i=0;i<Player.size();i++){
             Spieler spieler1=(Spieler) Player.get(i);
             spieler1.setKonto(spieler1.getEinsatz() + spieler1.getKonto()); //Einsatz am Ende wieder aufs Konto rechnen

@@ -9,10 +9,12 @@ public class Spiel {
     private int Blätter;
 
 
-    public ArrayList Spiel(int anzahlBlätter, ArrayList Player) {
+    public Spiel(int anzahlBlätter, ArrayList Player) {
         interface1 = new Interface();           //Interface erzeugen
         kartenstapel1 = new KartenStapel2(anzahlBlätter);
         this.Player= Player;
+    }
+    public ArrayList SpielAusführen() {
         Spielstart();
         SpielMitte();
         SpielEnde();
