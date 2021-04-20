@@ -122,6 +122,8 @@ public class Spiel {
             interface1.achtungEinsatz(spieler);
             e = EinsatzAbziehen(spieler);
         }
+        spieler1.setKonto(k-e);
+        Player.set(spieler,spieler1);
         setEinsatz(e,spieler);
         return e;
     }
