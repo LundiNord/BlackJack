@@ -71,9 +71,9 @@ public class Spiel {
             }
         }
 
-        if (dealer0.BlackJackDetektor()==true&& dealer0.handWert()<= 21) {
+        if(dealer0.BlackJackDetektor()==true&& dealer0.handWert()<= 21) {
             for (int i=0; i<Player.size(); i++) {
-                if (CheckBlackJack(i)==true) {
+                if(CheckBlackJack(i)==true) {
                     // bleibt gleich
                 }
                 else {
@@ -81,9 +81,9 @@ public class Spiel {
                 }
             }
         }
-        else if (dealer0.handWert()>=22) {
+        else if(dealer0.handWert()>=22) {
             for (int i=0; i<Player.size(); i++) {
-                if (CheckBlackJack(i)==true) {
+                if(CheckBlackJack(i)==true) {
                     setEinsatz(getEinsatz(i)*2.5,i);
                 }
                 else {
@@ -93,16 +93,16 @@ public class Spiel {
         }
         else{
             for (int i=0; i<Player.size(); i++) {
-                if (CheckBlackJack(i)==true) {
+                if(CheckBlackJack(i)==true) {
                     setEinsatz(getEinsatz(i)*2.5,i);
                 }
-                else if (getHandWert(i)>dealer0.handWert()) {
+                else if(getHandWert(i)>dealer0.handWert()) {
                     setEinsatz(getEinsatz(i)*2,i);
                 }
-                else if (getHandWert(i)==dealer0.handWert()) {
+                else if(getHandWert(i)==dealer0.handWert()) {
                     // nichts passiert
                 }
-                else if (getHandWert(i)<dealer0.handWert()) {
+                else if(getHandWert(i)<dealer0.handWert()) {
                     setEinsatz(0,i);
                 }
             }
