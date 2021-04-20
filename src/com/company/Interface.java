@@ -17,7 +17,7 @@ public class Interface {
         return x;
     }
     public void ShowEinsatz(double einsatz, int spieler) {
-        System.out.println("Spieler"+spieler+": Dein Einsatz ist: "+einsatz);
+        System.out.println("Spieler"+spieler+": Dein verbleibender Einsatz ist: "+einsatz);
     }
     public boolean KartenFragen(int spieler){       //Spieler fragen ob sie neue Karten möchten
         boolean Ja = false;
@@ -73,9 +73,6 @@ public class Interface {
         System.out.println("---------");
         //ToDo: Wartezeit
         //Thread.sleep(1000);
-    }
-    public void ShowWinner(int [][]spieler){
-        System.out.println("Der Gewinner ist: "+spieler);
     }
     public void achtungEinsatz(int spieler) {
         System.out.println("Spieler"+spieler+" : Der Einsatz ist zu hoch für dein Konto. Bitte wähle einen niedrigeren.");
