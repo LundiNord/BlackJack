@@ -8,12 +8,15 @@ public class Management {     //Management um mehrere Runden zu spielen
 
     public Management ()
     {
-        mInterface1=new ManagerInterface();
-        Blätter= mInterface1.Blätterabfrage();
-        spielerGenerieren(mInterface1.Spielerabfrage());
-        while (mInterface1.NeueRunde()==true){      //Solange gewünscht wird weiter gespielt
-            Spiel();
-        }
+        /**   mInterface1=new ManagerInterface();
+         * Blätter= mInterface1.Blätterabfrage();
+         * spielerGenerieren(mInterface1.Spielerabfrage());
+         * while (mInterface1.NeueRunde()==true){      //Solange gewünscht wird weiter gespielt
+         *  Spiel();
+         *  }
+         */
+        debug();
+
     }
 
     public void spielerGenerieren(int anzahlSpieler) {
@@ -44,5 +47,16 @@ public class Management {     //Management um mehrere Runden zu spielen
                 Player.remove(i);
             }
         }
+    }
+
+    public void debug() {
+        Spieler spieler1 = new Spieler(0);
+        Karte karte1 = new Karte(1,false);
+        Karte karte2 = new Karte(10,false);
+        Karte karte3 = new Karte(5,false);
+        spieler1.updateHandBlatt(karte1);
+        spieler1.updateHandBlatt(karte2);
+        spieler1.updateHandBlatt(karte3);
+        System.out.println(spieler1.handWert());
     }
 }
