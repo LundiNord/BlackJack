@@ -5,9 +5,9 @@ public class Spieler extends Teilnehmer{
     private double einsatz;     //Spieler haben einsätze
     private double konto;       //Konto des Spielers
 
-    public Spieler(double einsatz)
+    public Spieler(double konto)
     {
-        this.einsatz = einsatz;
+        this.konto = konto;
     }
 
     public double getEinsatz() {
@@ -17,5 +17,14 @@ public class Spieler extends Teilnehmer{
         this.einsatz = einsatz;
     }
 
+    public double getKonto() {
+        return konto;
+    }
 
+    public void setKonto(double konto) {
+        this.konto = konto;
+    }
+    public void Einzahlung(int x){
+        konto= konto+x;
+    }
 }

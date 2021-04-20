@@ -2,32 +2,29 @@ package com.company;
 import java.util.ArrayList;
 
 public class Spiel {
-    private int anzahlSpieler;
     private Dealer dealer0;                             //Dealer deklarieren
     private ArrayList Player = new ArrayList();        //Array List an Spielern |  Startet mit 0
     private Interface interface1;                      //Interface für das Spiel deklarieren
     private KartenStapel2 kartenstapel1;
     private int Blätter;
 
-    public Spiel(int anzahlSpieler, int anzahlBlätter) {
-        this.anzahlSpieler = anzahlSpieler;
+
+    public ArrayList Spiel(int anzahlBlätter, ArrayList Player) {
         interface1 = new Interface();           //Interface erzeugen
         kartenstapel1 = new KartenStapel2(anzahlBlätter);
-
-        //Nur zum Testen
+        this.Player= Player;
         Spielstart();
         SpielMitte();
         SpielEnde();
-        //debug();
-
+        return Player;
     }
     public int getBlätter() {
         return Blätter;
     }
 
     public void Spielstart() {                  //Initialisieren des Spiel
-        for(int i=0;i<anzahlSpieler;i++) {      //Spieler erzeugen
-            Player.add(new Spieler(interface1.Einsatz(i)));
+        for(int i=0;i< Player.size();i++) {      //Spieler erzeugen
+            setEinsatz(interface1.Einsatz(i),i);
 
             addKarten(kartenstapel1.KarteErzeugen(), i);
             addKarten(kartenstapel1.KarteErzeugen(), i);
@@ -40,7 +37,7 @@ public class Spiel {
     }
     
     public void SpielMitte() {              //Spieler dürfen mehr Karten ziehen
-        for(int i=0;i<anzahlSpieler;i++)
+        for(int i=0;i< Player.size();i++)
         {
             interface1.spielerWechsel(i);
             interface1.showHand(i,getHand(i));
@@ -73,7 +70,6 @@ public class Spiel {
             }
         }
         int[][] Handwerte = Auswertung2();
-
 
             //FixMe alles kaputt
         if (dealer0.BlackJackDetektor()==true&& dealer0.handWert()<= 21) {
@@ -116,9 +112,10 @@ public class Spiel {
 
         for(int i=0;i<Player.size();i++) {      //Einsatz für alle Spieler anzeigen
             interface1.ShowEinsatz(getEinsatz(i),i);
+            setHandwertNull(i);
         }
     }
-    
+
     public void addKarten(Karte karte1, int spieler) {      //Karten in ein Karten Array eines Spielers einfügen
         Spieler spieler1 = (Spieler) Player.get(spieler);
         spieler1.updateHandBlatt(karte1);
