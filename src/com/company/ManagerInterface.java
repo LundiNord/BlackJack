@@ -13,7 +13,7 @@ public class ManagerInterface
         Scanner scanner = new Scanner(System.in);
         System.out.println("Spieler"+spieler+": Wie viel Geld soll auf dein Konto?");
         double x = scanner.nextDouble();
-             if(x>0){
+             if(x<0){
             x= Konto(spieler);
         }
         return x;
@@ -24,7 +24,7 @@ public class ManagerInterface
         Scanner scanner = new Scanner(System.in);
         System.out.println("Wie viele Blätter möchtest du?");
         int x = scanner.nextInt();
-            if(x>=1){
+            if(x<=1){
                 x= Blätterabfrage();
             }
             return x;
@@ -44,7 +44,7 @@ public class ManagerInterface
         Scanner scanner = new Scanner(System.in);
         System.out.println("Wie viele Spieler seid ihr/du?");
         int x = scanner.nextInt();
-            if(x>0){
+            if(x<0){
             x= Spielerabfrage();
         }
         return x;
@@ -91,7 +91,7 @@ public class ManagerInterface
         Scanner scanner = new Scanner(System.in);
         System.out.println("Spieler"+spieler+": Wie willst du einzahlen?");
         int x = scanner.nextInt();
-            if(x>0){
+            if(x<0){
             x= einzahlung(spieler);
          }
         return x;
