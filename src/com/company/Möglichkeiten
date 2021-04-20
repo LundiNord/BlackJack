@@ -1,10 +1,10 @@
 Endmöglichkeiten
 
-Blackjack des Spielers- Einsatz x2,5
+^^Blackjack des Spielers- Einsatz x2,5
 Spieler ist höher als der Dealer- x2
 Spieler niedriger als Dealer - x0
 Spieler gleich Dealer- x1
-Spieler über 21- x0
+^^Spieler über 21- x0
 
 Dealer hat als einziger Blackjack- alle x0
-sonst SPieler mit Blackjack- x1
+sonst Spieler mit Blackjack- x1

@@ -75,7 +75,7 @@ public class Spiel {
         int[][] Handwerte = Auswertung2();
         boolean stop = false;
         for(int i=0;i<Player.size();i++) {      //Nach BlackJack schauen: Gewinn
-           if(CheckBlackJack(i)==true&&(getHandWert(i)<=21)) {
+           if(CheckBlackJack(i)==true&&(getHandWert(i)<=21)&& dealer0.BlackJackDetektor()==false) {
                setEinsatz(getEinsatz(i) * 2.5, i);
                stop = true;
            }
