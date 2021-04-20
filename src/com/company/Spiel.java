@@ -80,7 +80,7 @@ public class Spiel {
                stop = true;
            }
         }
-            //FixMe alles kaputt
+            //FixMe alles kaputtx
         if(dealer0.BlackJackDetektor()==true&&dealer0.handWert()<=21) {     //Wenn Dealer einen BlackJack hat
             //Pech gehabt
             for(int i=0;i<Player.size();i++) {      //Nach BlackJack schauen
@@ -97,9 +97,9 @@ public class Spiel {
             }
             else if(dealer0.handWert()<=21) {          //Wenn der Spieler höher ist
                 for(int i=0;i<Player.size();i++) {          //alle Spieler durchgehen
-                    if(dealer0.handWert()>Handwerte[Player.size()-1][1]) {
+                    if(dealer0.handWert()<Handwerte[Player.size()-1][1]) {
                         int spieler = Handwerte[0][0];
-                        setEinsatz(getEinsatz(spieler)*2,spieler);
+                        setEinsatz(getEinsatz(i)*2,spieler);
                     }
                     else if(dealer0.handWert()>Handwerte[Player.size()-1][1]) {
                         int spieler = Handwerte[0][0];
