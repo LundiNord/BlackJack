@@ -5,7 +5,7 @@ public class Management {     //Management um mehrere Runden zu spielen
     //ToDo: Weg um Spieler zu speichern
     private ArrayList Player = new ArrayList();
     private ManagerInterface mInterface1;
-    private int Blätter;
+       private int Blätter;
     private Spiel spiel1;
 
 
@@ -14,19 +14,8 @@ public class Management {     //Management um mehrere Runden zu spielen
         mInterface1=new ManagerInterface();
         Blätter= mInterface1.Blätterabfrage();
         spielerGenerieren(mInterface1.Spielerabfrage());
-        while (mInterface1.NeueRunde()==true){
-        Player= spiel1.Spiel(Blätter,Player);
-        for(int i=0;i<Player.size();i++){
-            Spieler spieler1=(Spieler) Player.get(i);
-            mInterface1.KontostandAusgeben(i,spieler1.getKonto());
-        }
-        if (mInterface1.mehrGeld()==true){
-            for(int i=0; i<= Player.size();i++){
-                Spieler spieler1=(Spieler) Player.get(i);
-                spieler1.Einzahlung(mInterface1.einzahlung(i));
-                Player.set(i,spieler1);
-            }
-        }
+        while (mInterface1.NeueRunde()==true){      //Solange gewünscht wird weiter gespielt
+            Spiel();
         }
     }
 
@@ -36,6 +25,26 @@ public class Management {     //Management um mehrere Runden zu spielen
             Player.add(new Spieler(mInterface1.Konto(i)));
         }
     }
-
-    
+    public void Spiel() {           //Das Spiel wird aufgerufen und ausgeführt
+        Player= spiel1.Spiel(Blätter,Player);
+        for(int i=0;i<Player.size();i++){
+            Spieler spieler1=(Spieler) Player.get(i);
+            spieler1.setKonto(spieler1.getEinsatz() + spieler1.getKonto()); //Einsatz am Ende wieder aufs Konto rechnen
+            mInterface1.KontostandAusgeben(i,spieler1.getKonto());  //Kontostand ausgeben
+        }
+        if (mInterface1.mehrGeld()==true){      //Geld einzahlen
+            for(int i=0; i<= Player.size();i++){
+                Spieler spieler1=(Spieler) Player.get(i);
+                spieler1.Einzahlung(mInterface1.einzahlung(i));
+                Player.set(i,spieler1);
+            }
+        }
+        //Wenn man kein Geld mehr hat fliegt man raus
+        for(int i=0; i<= Player.size();i++) {
+            Spieler spieler1 = (Spieler) Player.get(i);
+            if(spieler1.getKonto()<=0) {
+                Player.remove(i);
+            }
+        }
+    }
 }

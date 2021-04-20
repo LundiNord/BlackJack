@@ -9,18 +9,15 @@ public class Spieler extends Teilnehmer{
     {
         this.konto = konto;
     }
-
     public double getEinsatz() {
         return einsatz;
     }
     public void setEinsatz(double einsatz) {
         this.einsatz = einsatz;
     }
-
     public double getKonto() {
         return konto;
     }
-
     public void setKonto(double konto) {
         this.konto = konto;
     }

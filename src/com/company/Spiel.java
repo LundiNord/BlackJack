@@ -24,7 +24,8 @@ public class Spiel {
 
     public void Spielstart() {                  //Initialisieren des Spiel
         for(int i=0;i< Player.size();i++) {      //Spieler erzeugen
-            setEinsatz(interface1.Einsatz(i),i);
+            //setEinsatz(interface1.Einsatz(i),i);
+            EinsatzAbziehen(i);
 
             addKarten(kartenstapel1.KarteErzeugen(), i);
             addKarten(kartenstapel1.KarteErzeugen(), i);
@@ -69,9 +70,7 @@ public class Spiel {
                 setHandwertNull(i);
             }
         }
-        int[][] Handwerte = Auswertung2();
 
-            //FixMe alles kaputt
         if (dealer0.BlackJackDetektor()==true&& dealer0.handWert()<= 21) {
             for (int i=0; i<Player.size(); i++) {
                 if (CheckBlackJack(i)==true) {
@@ -108,14 +107,21 @@ public class Spiel {
                 }
             }
         }
-
-
         for(int i=0;i<Player.size();i++) {      //Einsatz für alle Spieler anzeigen
             interface1.ShowEinsatz(getEinsatz(i),i);
             setHandwertNull(i);
         }
     }
-
+    public void EinsatzAbziehen(int spieler){
+        double e = interface1.Einsatz(spieler);     //Einsatz erfragen
+        Spieler spieler1 = (Spieler)Player.get(spieler);
+        double k = spieler1.getKonto();
+        if((k-e)<0) {       //Wenn zu hoch, dann warnen und nochmal
+            interface1.achtungEinsatz(spieler);
+            EinsatzAbziehen(spieler);
+        }
+        setEinsatz(e,spieler);
+    }
     public void addKarten(Karte karte1, int spieler) {      //Karten in ein Karten Array eines Spielers einfügen
         Spieler spieler1 = (Spieler) Player.get(spieler);
         spieler1.updateHandBlatt(karte1);
@@ -148,42 +154,5 @@ public class Spiel {
         Spieler spieler1 = (Spieler) Player.get(spieler);
         spieler1.BlattLeeren();
         Player.set(spieler,spieler1);
-    }
-
-
-    public int[][] Auswertung2(){
-
-        int [] [ ] Handwerte = new int[Player.size()] [2];
-        for(int i=0;i<Player.size();i++)    //HandWerte der Spieler in ein Array stecken mit Spielernummer
-        {
-            Handwerte[i] [1] = getHandWert(i);
-            Handwerte[i] [0] = i;
-        }
-
-        Handwerte =sortiere(Handwerte);
-        return Handwerte;
-    }
-    public int[][] sortiere(int[][] liste) {                //Bubble Sort sortierer
-        for (int z = liste.length; z > 1; z = z - 1) {
-            for (int i = 0; i < liste.length - 1; i++) {
-                if (liste[i][1] > liste[i+1][1]) {                           //vertausche:
-                    int hilf = liste[i][1];
-                    int hilfS = liste[i][0];
-                    liste[i][1] = liste[i+1][1];
-                    liste[i][0] = liste[i+1][0];
-                    liste[i+1][1] = hilf;
-                    liste[i+1][0] = hilfS;
-                }
-            }
-        }
-        return liste;
-    }
-    public void debug() {                               //pls ignorieren
-        Karte karte1 = new Karte(1,false);
-        Karte karte2 = new Karte(4,false);
-        Spieler spieler1 = new Spieler(0);
-        spieler1.updateHandBlatt(karte1);
-        spieler1.updateHandBlatt(karte2);
-        System.out.println(spieler1.handWert());
     }
 }

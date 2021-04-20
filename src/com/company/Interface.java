@@ -19,11 +19,9 @@ public class Interface {
 
     }
 
-
     public void ShowEinsatz(double einsatz, int spieler) {
         System.out.println("Spieler"+spieler+": Dein Einsatz ist: "+einsatz);
     }
-
     public boolean KartenFragen(int spieler){       //Spieler fragen ob sie neue Karten möchten
         boolean Ja = false;
         System.out.println("Spieler"+spieler+": Möchtest du eine neue Karte ziehen? J/N");
@@ -82,5 +80,7 @@ public class Interface {
     public void ShowWinner(int [][]spieler){
         System.out.println("Der Gewinner ist: "+spieler);
     }
-
+    public void achtungEinsatz(int spieler) {
+        System.out.println("Spieler"+spieler+" : Der Einsatz ist zu hoch für dein Konto. Bitte wähle einen niedrigeren.");
+    }
 }
