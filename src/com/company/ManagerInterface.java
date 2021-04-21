@@ -74,7 +74,7 @@ public class ManagerInterface
     }
     public int einzahlung(int spieler){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Spieler"+spieler+": Wie willst du einzahlen?");
+        System.out.println("Spieler"+spieler+": Wie viel willst du einzahlen?");
         int x = scanner.nextInt();
             if(x<0){
             x= einzahlung(spieler);

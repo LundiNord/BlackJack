@@ -38,10 +38,10 @@ public class Management {     //Management um mehrere Runden zu spielen
             }
         }
         //Wenn man kein Geld mehr hat fliegt man raus
-        for(int i=0; i<Player.size();i++) {
-            Spieler spieler1 = (Spieler) Player.get(i);
+        for(int i=Player.size(); 0<i;i--) {
+            Spieler spieler1 = (Spieler) Player.get(i-1);
             if(spieler1.getKonto()<=0) {
-                Player.remove(i);
+                Player.remove(i-1);
             }
         }
     }
