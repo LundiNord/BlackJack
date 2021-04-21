@@ -84,5 +84,7 @@ public class ManagerInterface
     public void SpielerEntfernt(int spieler) {      //Spieler rücken aus
         System.out.println("Der Spieler"+spieler+" wurde entfernt. Spieler"+(spieler+1)+" ist jetzt Spieler"+spieler+".");
     }
-
+    public void Ersteller()  {
+        System.out.println("by Jan, Ricardo and Leon");
+    }
 }

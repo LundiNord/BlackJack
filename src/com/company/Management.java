@@ -14,7 +14,6 @@ public class Management {     //Management um mehrere Runden zu spielen
         while (mInterface1.NeueRunde()==true){      //Solange gewünscht wird weiter gespielt
            Spiel();
         }
-        System.out.println("by Jan, Ricardo und Leon");
     }
 
     public void spielerGenerieren(int anzahlSpieler) {
