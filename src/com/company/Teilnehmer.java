@@ -58,7 +58,7 @@ public abstract class Teilnehmer {               //Unterklassen: Spieler, Dealer
             x2 = x2 + (1*anzahlAsse);
             abstand2= 21 -x2;
         }
-        if(abstand1<0) {       //besseren Wert nehmen
+        if(abstand2<0||abstand2>abstand1) {       //besseren Wert nehmen
             wert = x1;
         }
         else {
