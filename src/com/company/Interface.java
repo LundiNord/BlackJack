@@ -71,9 +71,19 @@ public class Interface {
         System.out.println("---------");
         System.out.println("Jetzt ist Spieler "+nspieler+" dran. Bitte wegschauen!");
         System.out.println("---------");
-        //ToDo: Wartezeit
+        wait(4000);
 
-        //Thread.sleep(1000);
+    }
+    public static void wait(int ms)     //Warten methode
+    {
+        try
+        {
+            Thread.sleep(ms);
+        }
+        catch(InterruptedException ex)
+        {
+            Thread.currentThread().interrupt();
+        }
     }
     public void achtungEinsatz(int spieler) {
         System.out.println("Spieler"+spieler+": Der Einsatz ist zu hoch für dein Konto. Bitte wähle einen niedrigeren.");
