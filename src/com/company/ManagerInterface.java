@@ -81,5 +81,8 @@ public class ManagerInterface
          }
         return x;
     }
+    public void SpielerEntfernt(int spieler) {      //Spieler rücken aus
+        System.out.println("Der Spieler"+spieler+" wurde entfernt. Spieler"+(spieler+1)+" ist jetzt Spieler"+spieler+".");
+    }
 
 }

@@ -42,6 +42,7 @@ public class Management {     //Management um mehrere Runden zu spielen
             Spieler spieler1 = (Spieler) Player.get(i-1);
             if(spieler1.getKonto()<=0) {
                 Player.remove(i-1);
+                mInterface1.SpielerEntfernt(i-1);
             }
         }
     }
