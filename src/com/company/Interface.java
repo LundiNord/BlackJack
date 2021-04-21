@@ -72,7 +72,6 @@ public class Interface {
         System.out.println("Jetzt ist Spieler "+nspieler+" dran. Bitte wegschauen!");
         System.out.println("---------");
         wait(4000);
-
     }
     public static void wait(int ms)     //Warten methode
     {
